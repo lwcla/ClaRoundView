@@ -14,7 +14,7 @@ enum class ClaRoundStateType {
     DISABLE, //disable状态
 }
 
-internal interface ClaRoundViewInf {
+interface ClaRoundViewInf {
 
     private val helper get() = getClaRoundViewHelper()
     private val claView get() = getView()

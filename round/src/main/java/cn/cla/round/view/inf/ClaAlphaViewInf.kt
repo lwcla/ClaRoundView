@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.View
 import cn.cla.round.view.R
 
-internal interface ClaAlphaViewInf {
+interface ClaAlphaViewInf {
 
     private val claView get() = getView()
 

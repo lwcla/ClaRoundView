@@ -9,7 +9,7 @@ import cn.cla.round.view.entity.ClaViewLineBuilder
 import cn.cla.round.view.utils.INVALID_VALUE
 import cn.cla.round.view.utils.INVALID_VALUE_F
 
-internal interface ClaViewLineInf {
+interface ClaViewLineInf {
 
     private val claView get() = getView()
 
