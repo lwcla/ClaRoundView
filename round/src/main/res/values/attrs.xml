@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--是否在按压状态改变按钮的透明度-->
+    <attr name="cla_view_changeAlpha_whenPress" format="boolean" />
+    <!--是否在disable状态改变按钮的透明度-->
+    <attr name="cla_view_changeAlpha_whenDisable" format="boolean" />
+    <!--按压状态按钮的透明度 0f-1f-->
+    <attr name="cla_view_pressAlpha" format="float" />
+    <!--disable状态按钮的透明度 0f-1f-->
+    <attr name="cla_view_disableAlpha" format="float" />
+
+    <!--线条的粗度-->
+    <attr name="cla_view_lineWidth" format="dimension" />
+    <!--虚线的长度-->
+    <attr name="cla_view_lineDashWidth" format="dimension" />
+    <!--虚线的间隔-->
+    <attr name="cla_view_lineDashGap" format="dimension" />
+    <!--线条颜色-->
+    <attr name="cla_view_lineColor" format="color" />
+    <!--线条颜色透明度-->
+    <attr name="cla_view_lineColorAlpha" format="float" />
+    <!--线条与两边的空间-->
+    <attr name="cla_view_lineSpace" format="dimension" />
+    <!--线条与顶部的空间-->
+    <attr name="cla_view_lineTopSpace" format="dimension" />
+    <!--线条与底部的空间-->
+    <attr name="cla_view_lineBottomSpace" format="dimension" />
+    <!--线条与左边的空间-->
+    <attr name="cla_view_lineLeftSpace" format="dimension" />
+    <!--线条与右边的空间-->
+    <attr name="cla_view_lineRightSpace" format="dimension" />
+    <!--是否显示view顶部的线条-->
+    <attr name="cla_view_showTopLine" format="boolean" />
+    <!--是否需要左边的线条-->
+    <attr name="cla_view_showLeftLine" format="boolean" />
+    <!--是否需要右边的线条-->
+    <attr name="cla_view_showRightLine" format="boolean" />
+    <!--是否需要下边的线条-->
+    <attr name="cla_view_showBottomLine" format="boolean" />
+
+    <!--普通状态-->
+    <attr name="cla_normal_backgroundColor" format="color" />
+    <attr name="cla_normal_backgroundColorAlpha" format="float" />
+    <attr name="cla_normal_borderWidth" format="dimension" />
+    <attr name="cla_normal_borderDashWidth" format="dimension" />
+    <attr name="cla_normal_borderDashGap" format="dimension" />
+    <attr name="cla_normal_borderColor" format="color" />
+    <attr name="cla_normal_borderColorAlpha" format="float" />
+    <!--设置圆角大小是否自动适应为 View 的高度的一半-->
+    <attr name="cla_normal_radiusAdjustBounds" format="boolean" />
+    <attr name="cla_normal_topLeftRadius" format="dimension" />
+    <attr name="cla_normal_topRightRadius" format="dimension" />
+    <attr name="cla_normal_bottomLeftRadius" format="dimension" />
+    <attr name="cla_normal_bottomRightRadius" format="dimension" />
+    <attr name="cla_normal_radius" format="dimension" />
+    <attr name="cla_normal_drawable" format="reference" />
+    <attr name="cla_normal_textColor" format="color" />
+    <attr name="cla_normal_textColorAlpha" format="float" />
+    <!--普通状态-->
+
+    <!--按压状态-->
+    <attr name="cla_press_backgroundColor" format="color" />
+    <attr name="cla_press_backgroundColorAlpha" format="float" />
+    <attr name="cla_press_borderWidth" format="dimension" />
+    <attr name="cla_press_borderDashWidth" format="dimension" />
+    <attr name="cla_press_borderDashGap" format="dimension" />
+    <attr name="cla_press_borderColor" format="color" />
+    <attr name="cla_press_borderColorAlpha" format="float" />
+    <attr name="cla_press_radiusAdjustBounds" format="boolean" />
+    <attr name="cla_press_topLeftRadius" format="dimension" />
+    <attr name="cla_press_topRightRadius" format="dimension" />
+    <attr name="cla_press_bottomLeftRadius" format="dimension" />
+    <attr name="cla_press_bottomRightRadius" format="dimension" />
+    <attr name="cla_press_radius" format="dimension" />
+    <attr name="cla_press_drawable" format="reference" />
+    <attr name="cla_press_textColor" format="color" />
+    <attr name="cla_press_textColorAlpha" format="float" />
+    <!--按压状态-->
+
+    <!--选中状态-->
+    <attr name="cla_select_backgroundColor" format="color" />
+    <attr name="cla_select_backgroundColorAlpha" format="float" />
+    <attr name="cla_select_borderWidth" format="dimension" />
+    <attr name="cla_select_borderDashWidth" format="dimension" />
+    <attr name="cla_select_borderDashGap" format="dimension" />
+    <attr name="cla_select_borderColor" format="color" />
+    <attr name="cla_select_borderColorAlpha" format="float" />
+    <attr name="cla_select_radiusAdjustBounds" format="boolean" />
+    <attr name="cla_select_topLeftRadius" format="dimension" />
+    <attr name="cla_select_topRightRadius" format="dimension" />
+    <attr name="cla_select_bottomLeftRadius" format="dimension" />
+    <attr name="cla_select_bottomRightRadius" format="dimension" />
+    <attr name="cla_select_radius" format="dimension" />
+    <attr name="cla_select_drawable" format="reference" />
+    <attr name="cla_select_textColor" format="color" />
+    <attr name="cla_select_textColorAlpha" format="float" />
+    <!--选中状态-->
+
+    <!--获取焦点状态-->
+    <attr name="cla_focus_backgroundColor" format="color" />
+    <attr name="cla_focus_backgroundColorAlpha" format="float" />
+    <attr name="cla_focus_borderWidth" format="dimension" />
+    <attr name="cla_focus_borderDashWidth" format="dimension" />
+    <attr name="cla_focus_borderDashGap" format="dimension" />
+    <attr name="cla_focus_borderColor" format="color" />
+    <attr name="cla_focus_borderColorAlpha" format="float" />
+    <attr name="cla_focus_radiusAdjustBounds" format="boolean" />
+    <attr name="cla_focus_topLeftRadius" format="dimension" />
+    <attr name="cla_focus_topRightRadius" format="dimension" />
+    <attr name="cla_focus_bottomLeftRadius" format="dimension" />
+    <attr name="cla_focus_bottomRightRadius" format="dimension" />
+    <attr name="cla_focus_radius" format="dimension" />
+    <attr name="cla_focus_drawable" format="reference" />
+    <attr name="cla_focus_textColor" format="color" />
+    <attr name="cla_focus_textColorAlpha" format="float" />
+    <!--获取焦点状态-->
+
+    <!--activated状态-->
+    <attr name="cla_activated_backgroundColor" format="color" />
+    <attr name="cla_activated_backgroundColorAlpha" format="float" />
+    <attr name="cla_activated_borderWidth" format="dimension" />
+    <attr name="cla_activated_borderDashWidth" format="dimension" />
+    <attr name="cla_activated_borderDashGap" format="dimension" />
+    <attr name="cla_activated_borderColor" format="color" />
+    <attr name="cla_activated_borderColorAlpha" format="float" />
+    <attr name="cla_activated_radiusAdjustBounds" format="boolean" />
+    <attr name="cla_activated_topLeftRadius" format="dimension" />
+    <attr name="cla_activated_topRightRadius" format="dimension" />
+    <attr name="cla_activated_bottomLeftRadius" format="dimension" />
+    <attr name="cla_activated_bottomRightRadius" format="dimension" />
+    <attr name="cla_activated_radius" format="dimension" />
+    <attr name="cla_activated_drawable" format="reference" />
+    <attr name="cla_activated_textColor" format="color" />
+    <attr name="cla_activated_textColorAlpha" format="float" />
+    <!--activated状态-->
+
+    <!--disable状态-->
+    <attr name="cla_disable_backgroundColor" format="color" />
+    <attr name="cla_disable_backgroundColorAlpha" format="float" />
+    <attr name="cla_disable_borderWidth" format="dimension" />
+    <attr name="cla_disable_borderDashWidth" format="dimension" />
+    <attr name="cla_disable_borderDashGap" format="dimension" />
+    <attr name="cla_disable_borderColor" format="color" />
+    <attr name="cla_disable_borderColorAlpha" format="float" />
+    <attr name="cla_disable_radiusAdjustBounds" format="boolean" />
+    <attr name="cla_disable_topLeftRadius" format="dimension" />
+    <attr name="cla_disable_topRightRadius" format="dimension" />
+    <attr name="cla_disable_bottomLeftRadius" format="dimension" />
+    <attr name="cla_disable_bottomRightRadius" format="dimension" />
+    <attr name="cla_disable_radius" format="dimension" />
+    <!--drawable的优先级最高，设置了drawable的话，边框和背景色就不会生效了-->
+    <attr name="cla_disable_drawable" format="reference" />
+    <attr name="cla_disable_textColor" format="color" />
+    <attr name="cla_disable_textColorAlpha" format="float" />
+    <!--disable状态-->
+
+    <declare-styleable name="ClaViewChangeAlpha">
+        <attr name="cla_view_changeAlpha_whenPress" />
+        <attr name="cla_view_changeAlpha_whenDisable" />
+        <attr name="cla_view_pressAlpha" />
+        <attr name="cla_view_disableAlpha" />
+    </declare-styleable>
+
+    <declare-styleable name="ClaViewLine">
+        <attr name="cla_view_lineWidth" />
+        <attr name="cla_view_lineColor" />
+        <attr name="cla_view_lineColorAlpha" />
+        <attr name="cla_view_lineSpace" />
+        <attr name="cla_view_showTopLine" />
+        <attr name="cla_view_showLeftLine" />
+        <attr name="cla_view_showRightLine" />
+        <attr name="cla_view_showBottomLine" />
+        <attr name="cla_view_lineDashGap" />
+        <attr name="cla_view_lineDashWidth" />
+        <attr name="cla_view_lineTopSpace" />
+        <attr name="cla_view_lineBottomSpace" />
+        <attr name="cla_view_lineLeftSpace" />
+        <attr name="cla_view_lineRightSpace" />
+    </declare-styleable>
+
+    <declare-styleable name="ClaRoundNormalDrawable">
+        <attr name="cla_normal_backgroundColor" />
+        <attr name="cla_normal_backgroundColorAlpha" />
+        <attr name="cla_normal_borderWidth" />
+        <attr name="cla_normal_borderDashWidth" />
+        <attr name="cla_normal_borderDashGap" />
+        <attr name="cla_normal_borderColor" />
+        <attr name="cla_normal_borderColorAlpha" />
+        <attr name="cla_normal_radiusAdjustBounds" />
+        <attr name="cla_normal_topLeftRadius" />
+        <attr name="cla_normal_topRightRadius" />
+        <attr name="cla_normal_bottomLeftRadius" />
+        <attr name="cla_normal_bottomRightRadius" />
+        <attr name="cla_normal_radius" />
+        <attr name="cla_normal_drawable" />
+        <attr name="cla_normal_textColor" />
+        <attr name="cla_normal_textColorAlpha" />
+    </declare-styleable>
+
+    <declare-styleable name="ClaRoundPressDrawable">
+        <attr name="cla_press_backgroundColor" />
+        <attr name="cla_press_backgroundColorAlpha" />
+        <attr name="cla_press_borderWidth" />
+        <attr name="cla_press_borderDashWidth" />
+        <attr name="cla_press_borderDashGap" />
+        <attr name="cla_press_borderColor" />
+        <attr name="cla_press_borderColorAlpha" />
+        <attr name="cla_press_radiusAdjustBounds" />
+        <attr name="cla_press_topLeftRadius" />
+        <attr name="cla_press_topRightRadius" />
+        <attr name="cla_press_bottomLeftRadius" />
+        <attr name="cla_press_bottomRightRadius" />
+        <attr name="cla_press_radius" />
+        <attr name="cla_press_drawable" />
+        <attr name="cla_press_textColor" />
+        <attr name="cla_press_textColorAlpha" />
+    </declare-styleable>
+
+    <declare-styleable name="ClaRoundSelectDrawable">
+        <attr name="cla_select_backgroundColor" />
+        <attr name="cla_select_backgroundColorAlpha" />
+        <attr name="cla_select_borderWidth" />
+        <attr name="cla_select_borderDashWidth" />
+        <attr name="cla_select_borderDashGap" />
+        <attr name="cla_select_borderColor" />
+        <attr name="cla_select_borderColorAlpha" />
+        <attr name="cla_select_radiusAdjustBounds" />
+        <attr name="cla_select_topLeftRadius" />
+        <attr name="cla_select_topRightRadius" />
+        <attr name="cla_select_bottomLeftRadius" />
+        <attr name="cla_select_bottomRightRadius" />
+        <attr name="cla_select_radius" />
+        <attr name="cla_select_drawable" />
+        <attr name="cla_select_textColor" />
+        <attr name="cla_select_textColorAlpha" />
+    </declare-styleable>
+
+    <declare-styleable name="ClaRoundFocusDrawable">
+        <attr name="cla_focus_backgroundColor" />
+        <attr name="cla_focus_backgroundColorAlpha" />
+        <attr name="cla_focus_borderWidth" />
+        <attr name="cla_focus_borderDashWidth" />
+        <attr name="cla_focus_borderDashGap" />
+        <attr name="cla_focus_borderColor" />
+        <attr name="cla_focus_borderColorAlpha" />
+        <attr name="cla_focus_radiusAdjustBounds" />
+        <attr name="cla_focus_topLeftRadius" />
+        <attr name="cla_focus_topRightRadius" />
+        <attr name="cla_focus_bottomLeftRadius" />
+        <attr name="cla_focus_bottomRightRadius" />
+        <attr name="cla_focus_radius" />
+        <attr name="cla_focus_drawable" />
+        <attr name="cla_focus_textColor" />
+        <attr name="cla_focus_textColorAlpha" />
+    </declare-styleable>
+
+    <declare-styleable name="ClaRoundActivatedDrawable">
+        <attr name="cla_activated_backgroundColor" />
+        <attr name="cla_activated_backgroundColorAlpha" />
+        <attr name="cla_activated_borderWidth" />
+        <attr name="cla_activated_borderDashWidth" />
+        <attr name="cla_activated_borderDashGap" />
+        <attr name="cla_activated_borderColor" />
+        <attr name="cla_activated_borderColorAlpha" />
+        <attr name="cla_activated_radiusAdjustBounds" />
+        <attr name="cla_activated_topLeftRadius" />
+        <attr name="cla_activated_topRightRadius" />
+        <attr name="cla_activated_bottomLeftRadius" />
+        <attr name="cla_activated_bottomRightRadius" />
+        <attr name="cla_activated_radius" />
+        <attr name="cla_activated_drawable" />
+        <attr name="cla_activated_textColor" />
+        <attr name="cla_activated_textColorAlpha" />
+    </declare-styleable>
+
+    <declare-styleable name="ClaRoundDisableDrawable">
+        <attr name="cla_disable_backgroundColor" />
+        <attr name="cla_disable_backgroundColorAlpha" />
+        <attr name="cla_disable_borderWidth" />
+        <attr name="cla_disable_borderDashWidth" />
+        <attr name="cla_disable_borderDashGap" />
+        <attr name="cla_disable_borderColor" />
+        <attr name="cla_disable_borderColorAlpha" />
+        <attr name="cla_disable_radiusAdjustBounds" />
+        <attr name="cla_disable_topLeftRadius" />
+        <attr name="cla_disable_topRightRadius" />
+        <attr name="cla_disable_bottomLeftRadius" />
+        <attr name="cla_disable_bottomRightRadius" />
+        <attr name="cla_disable_radius" />
+        <attr name="cla_disable_drawable" />
+        <attr name="cla_disable_textColor" />
+        <attr name="cla_disable_textColorAlpha" />
+    </declare-styleable>
+
+    <declare-styleable name="ClaRoundTextView">
+
+        <attr name="cla_normal_backgroundColor" />
+        <attr name="cla_normal_backgroundColorAlpha" />
+        <attr name="cla_normal_borderWidth" />
+        <attr name="cla_normal_borderDashWidth" />
+        <attr name="cla_normal_borderDashGap" />
+        <attr name="cla_normal_borderColor" />
+        <attr name="cla_normal_borderColorAlpha" />
+        <attr name="cla_normal_radiusAdjustBounds" />
+        <attr name="cla_normal_topLeftRadius" />
+        <attr name="cla_normal_topRightRadius" />
+        <attr name="cla_normal_bottomLeftRadius" />
+        <attr name="cla_normal_bottomRightRadius" />
+        <attr name="cla_normal_radius" />
+        <attr name="cla_normal_drawable" />
+        <attr name="cla_normal_textColor" />
+        <attr name="cla_normal_textColorAlpha" />
+
+        <attr name="cla_press_backgroundColor" />
+        <attr name="cla_press_backgroundColorAlpha" />
+        <attr name="cla_press_borderWidth" />
+        <attr name="cla_press_borderDashWidth" />
+        <attr name="cla_press_borderDashGap" />
+        <attr name="cla_press_borderColor" />
+        <attr name="cla_press_borderColorAlpha" />
+        <attr name="cla_press_radiusAdjustBounds" />
+        <attr name="cla_press_topLeftRadius" />
+        <attr name="cla_press_topRightRadius" />
+        <attr name="cla_press_bottomLeftRadius" />
+        <attr name="cla_press_bottomRightRadius" />
+        <attr name="cla_press_radius" />
+        <attr name="cla_press_drawable" />
+        <attr name="cla_press_textColor" />
+        <attr name="cla_press_textColorAlpha" />
+
+        <attr name="cla_select_backgroundColor" />
+        <attr name="cla_select_backgroundColorAlpha" />
+        <attr name="cla_select_borderWidth" />
+        <attr name="cla_select_borderDashWidth" />
+        <attr name="cla_select_borderDashGap" />
+        <attr name="cla_select_borderColor" />
+        <attr name="cla_select_borderColorAlpha" />
+        <attr name="cla_select_radiusAdjustBounds" />
+        <attr name="cla_select_topLeftRadius" />
+        <attr name="cla_select_topRightRadius" />
+        <attr name="cla_select_bottomLeftRadius" />
+        <attr name="cla_select_bottomRightRadius" />
+        <attr name="cla_select_radius" />
+        <attr name="cla_select_drawable" />
+        <attr name="cla_select_textColor" />
+        <attr name="cla_select_textColorAlpha" />
+
+        <attr name="cla_focus_backgroundColor" />
+        <attr name="cla_focus_backgroundColorAlpha" />
+        <attr name="cla_focus_borderWidth" />
+        <attr name="cla_focus_borderDashWidth" />
+        <attr name="cla_focus_borderDashGap" />
+        <attr name="cla_focus_borderColor" />
+        <attr name="cla_focus_borderColorAlpha" />
+        <attr name="cla_focus_radiusAdjustBounds" />
+        <attr name="cla_focus_topLeftRadius" />
+        <attr name="cla_focus_topRightRadius" />
+        <attr name="cla_focus_bottomLeftRadius" />
+        <attr name="cla_focus_bottomRightRadius" />
+        <attr name="cla_focus_radius" />
+        <attr name="cla_focus_drawable" />
+        <attr name="cla_focus_textColor" />
+        <attr name="cla_focus_textColorAlpha" />
+
+        <attr name="cla_activated_backgroundColor" />
+        <attr name="cla_activated_backgroundColorAlpha" />
+        <attr name="cla_activated_borderWidth" />
+        <attr name="cla_activated_borderDashWidth" />
+        <attr name="cla_activated_borderDashGap" />
+        <attr name="cla_activated_borderColor" />
+        <attr name="cla_activated_borderColorAlpha" />
+        <attr name="cla_activated_radiusAdjustBounds" />
+        <attr name="cla_activated_topLeftRadius" />
+        <attr name="cla_activated_topRightRadius" />
+        <attr name="cla_activated_bottomLeftRadius" />
+        <attr name="cla_activated_bottomRightRadius" />
+        <attr name="cla_activated_radius" />
+        <attr name="cla_activated_drawable" />
+        <attr name="cla_activated_textColor" />
+        <attr name="cla_activated_textColorAlpha" />
+
+        <attr name="cla_disable_backgroundColor" />
+        <attr name="cla_disable_backgroundColorAlpha" />
+        <attr name="cla_disable_borderWidth" />
+        <attr name="cla_disable_borderDashWidth" />
+        <attr name="cla_disable_borderDashGap" />
+        <attr name="cla_disable_borderColor" />
+        <attr name="cla_disable_borderColorAlpha" />
+        <attr name="cla_disable_radiusAdjustBounds" />
+        <attr name="cla_disable_topLeftRadius" />
+        <attr name="cla_disable_topRightRadius" />
+        <attr name="cla_disable_bottomLeftRadius" />
+        <attr name="cla_disable_bottomRightRadius" />
+        <attr name="cla_disable_radius" />
+        <attr name="cla_disable_drawable" />
+        <attr name="cla_disable_textColor" />
+        <attr name="cla_disable_textColorAlpha" />
+
+        <attr name="cla_view_changeAlpha_whenPress" />
+        <attr name="cla_view_changeAlpha_whenDisable" />
+        <attr name="cla_view_pressAlpha" />
+        <attr name="cla_view_disableAlpha" />
+
+        <attr name="cla_view_lineWidth" />
+        <attr name="cla_view_lineColor" />
+        <attr name="cla_view_lineColorAlpha" />
+        <attr name="cla_view_lineSpace" />
+        <attr name="cla_view_showTopLine" />
+        <attr name="cla_view_showLeftLine" />
+        <attr name="cla_view_showRightLine" />
+        <attr name="cla_view_showBottomLine" />
+        <attr name="cla_view_lineDashGap" />
+        <attr name="cla_view_lineDashWidth" />
+        <attr name="cla_view_lineTopSpace" />
+        <attr name="cla_view_lineBottomSpace" />
+        <attr name="cla_view_lineLeftSpace" />
+        <attr name="cla_view_lineRightSpace" />
+
+    </declare-styleable>
+
+</resources>

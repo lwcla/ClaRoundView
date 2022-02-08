@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cla_view_normal_alpha" type="id" />
+    <item name="cla_view_press_alpha" type="id" />
+    <item name="cla_view_disable_alpha" type="id" />
+    <item name="cla_view_change_alpha_when_press" type="id" />
+    <item name="cla_view_change_alpha_when_disable" type="id" />
+    <item name="cla_view_line_builder" type="id" />
+</resources>
