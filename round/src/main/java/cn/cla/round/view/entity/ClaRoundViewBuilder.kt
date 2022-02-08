@@ -31,7 +31,7 @@ data class ClaRoundViewBuilder(
     var drawable: Drawable? = null,
     @ColorInt var bgColor: Int = INVALID_VALUE,
     var bgColorAlpha: Float = 1f,
-    var borderWidth: Float = INVALID_VALUE_F,
+    var borderWidth: Float = 0f,
     var dashWidth: Float = 0f,
     var dashGap: Float = 0f,
     @ColorInt var borderColor: Int = INVALID_VALUE,
@@ -48,9 +48,9 @@ data class ClaRoundViewBuilder(
 
     private val roundDrawable by lazyNull { ClaRoundDrawable(this) }
 
-    val readDrawable get() = drawable ?: roundDrawable.also { it.setRoundAndColor() }
+    val hasDrawable get() = drawable != null || hasBorder || bgColor != INVALID_VALUE
 
-    val hasDrawable get() = drawable != null && borderColor != INVALID_VALUE && bgColor != INVALID_VALUE
+    val readDrawable get() = drawable ?: roundDrawable.also { it.setRoundAndColor() }
 
     val hasRadius get() = hasAllRadius || hasSingleRadius
 
@@ -68,7 +68,7 @@ data class ClaRoundViewBuilder(
 
     val radiusAdjust get() = !hasRadius && radiusAdjustBounds
 
-    val hasBorder get() = borderWidth != INVALID_VALUE_F && borderColor != INVALID_VALUE
+    val hasBorder get() = borderWidth >= 0 && borderColor != INVALID_VALUE
 
     val hasBgColor get() = bgColor != INVALID_VALUE
 
@@ -82,7 +82,7 @@ data class ClaRoundViewBuilder(
 }
 
 internal fun ClaRoundViewBuilder.addToStateDrawable(list: MutableList<Pair<IntArray, Drawable>>, state: Int?) {
-    if (!hasBgColor) {
+    if (!hasDrawable) {
         return
     }
 
@@ -109,7 +109,6 @@ internal fun ClaRoundViewBuilder.addToColorState(
     } else {
         intArrayOf(state)
     }
-
 
     stateList.add(stateArray)
     colorList.add(aTextColor)

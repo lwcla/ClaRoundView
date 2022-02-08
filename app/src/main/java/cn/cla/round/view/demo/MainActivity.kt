@@ -14,6 +14,7 @@ import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import cn.cla.round.view.inf.ClaRoundStateType
+import cn.cla.round.view.widget.ClaRoundImageView
 import cn.cla.round.view.widget.ClaRoundTextView
 import kotlin.concurrent.thread
 import kotlin.math.abs
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val btnActivated = findViewById<Button>(R.id.btnActivated)
         val btnChangeActivated = findViewById<Button>(R.id.btnChangeActivated)
         val btnDisable = findViewById<Button>(R.id.btnDisable)
+        val ivTest = findViewById<ClaRoundImageView>(R.id.ivTest)
 
         tvRound.setClaBackground(ClaRoundStateType.PRESSED) {
             val gd = GradientDrawable()
@@ -133,6 +135,10 @@ class MainActivity : AppCompatActivity() {
                 lineLeftSpace = 2.dp.toFloat()
                 lineColor = colorValue(R.color.c3)
             }
+        }
+
+        ivTest.setOnClickListener {
+            ivTest.isSelected = !ivTest.isSelected
         }
     }
 }

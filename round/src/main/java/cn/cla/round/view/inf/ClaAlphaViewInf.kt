@@ -7,24 +7,26 @@ import cn.cla.round.view.R
 
 internal interface ClaAlphaViewInf {
 
+    private val claView get() = getView()
+
     private val normalAlpha: Float
-        get() = getView().getTag(R.id.cla_view_normal_alpha) as? Float? ?: 1f
+        get() = claView.getTag(R.id.cla_view_normal_alpha) as? Float? ?: 1f
 
     var pressedAlpha: Float
-        get() = getView().getTag(R.id.cla_view_press_alpha) as? Float? ?: 0.5f
-        set(value) = getView().setTag(R.id.cla_view_press_alpha, value)
+        get() = claView.getTag(R.id.cla_view_press_alpha) as? Float? ?: 0.5f
+        set(value) = claView.setTag(R.id.cla_view_press_alpha, value)
 
     var disabledAlpha: Float
-        get() = getView().getTag(R.id.cla_view_disable_alpha) as? Float? ?: 0.5f
-        set(value) = getView().setTag(R.id.cla_view_disable_alpha, value)
+        get() = claView.getTag(R.id.cla_view_disable_alpha) as? Float? ?: 0.5f
+        set(value) = claView.setTag(R.id.cla_view_disable_alpha, value)
 
     var changeAlphaWhenPress: Boolean
-        get() = getView().getTag(R.id.cla_view_change_alpha_when_press) as? Boolean? ?: false
-        set(value) = getView().setTag(R.id.cla_view_change_alpha_when_press, value)
+        get() = claView.getTag(R.id.cla_view_change_alpha_when_press) as? Boolean? ?: false
+        set(value) = claView.setTag(R.id.cla_view_change_alpha_when_press, value)
 
     var changeAlphaWhenDisable: Boolean
-        get() = getView().getTag(R.id.cla_view_change_alpha_when_disable) as? Boolean? ?: false
-        set(value) = getView().setTag(R.id.cla_view_change_alpha_when_disable, value)
+        get() = claView.getTag(R.id.cla_view_change_alpha_when_disable) as? Boolean? ?: false
+        set(value) = claView.setTag(R.id.cla_view_change_alpha_when_disable, value)
 
     fun initAlphaChange(context: Context, attr: AttributeSet?) {
         val array = context.obtainStyledAttributes(attr, R.styleable.ClaViewChangeAlpha)
@@ -53,15 +55,15 @@ internal interface ClaAlphaViewInf {
         }
 
         if (changeAlphaWhenPress) {
-            getView().isFocusable = true
-            getView().isClickable = true
+            claView.isFocusable = true
+            claView.isClickable = true
         }
 
         array.recycle()
     }
 
     fun onPressedChanged(current: View, pressed: Boolean) {
-        getView().apply {
+        claView.apply {
             if (current.isEnabled) {
                 alpha = if (changeAlphaWhenPress && pressed && current.isClickable) {
                     pressedAlpha
@@ -75,7 +77,7 @@ internal interface ClaAlphaViewInf {
     }
 
     fun onEnabledChanged(current: View, enabled: Boolean) {
-        getView().apply {
+        claView.apply {
             val alphaForIsEnable = if (changeAlphaWhenDisable) {
                 if (enabled) normalAlpha else disabledAlpha
             } else {

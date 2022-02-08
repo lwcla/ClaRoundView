@@ -11,12 +11,14 @@ import cn.cla.round.view.utils.INVALID_VALUE_F
 
 internal interface ClaViewLineInf {
 
-    private var builder: ClaViewLineBuilder
-        get() = getView().getTag(R.id.cla_view_line_builder) as? ClaViewLineBuilder? ?: ClaViewLineBuilder()
-        set(value) = getView().setTag(R.id.cla_view_line_builder, value)
+    private val claView get() = getView()
 
-    private val viewWidth get() = getView().width.toFloat()
-    private val viewHeight get() = getView().height.toFloat()
+    private var builder: ClaViewLineBuilder
+        get() = claView.getTag(R.id.cla_view_line_builder) as? ClaViewLineBuilder? ?: ClaViewLineBuilder()
+        set(value) = claView.setTag(R.id.cla_view_line_builder, value)
+
+    private val viewWidth get() = claView.width.toFloat()
+    private val viewHeight get() = claView.height.toFloat()
     private val lineEndX get() = viewWidth - builder.lineRightSpace
     private val lineEndY get() = viewHeight - builder.lineBottomSpace
 
@@ -45,8 +47,6 @@ internal interface ClaViewLineInf {
             array.getDimension(R.styleable.ClaViewLine_cla_view_lineLeftSpace, lineSpace)
         val lineRightSpace =
             array.getDimension(R.styleable.ClaViewLine_cla_view_lineRightSpace, lineSpace)
-
-//        lineRealColor = lineColor.changeColorAlpha(lineColorAlpha)
 
         array.recycle()
 

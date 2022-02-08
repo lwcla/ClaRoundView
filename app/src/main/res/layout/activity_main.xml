@@ -1,189 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/c9"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:background="@color/c9">
 
-    <cn.cla.round.view.widget.ClaRoundTextView
-        android:id="@+id/tvRound"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:gravity="center"
-        android:padding="18dp"
-        android:text="这是测试"
-        android:textSize="16sp"
-        app:cla_activated_backgroundColor="@color/transparent"
-        app:cla_activated_textColor="@color/black"
-        app:cla_activated_textColorAlpha="0.5"
-        app:cla_disable_backgroundColor="@color/c5"
-        app:cla_disable_backgroundColorAlpha="0.5"
-        app:cla_disable_borderColor="@color/black"
-        app:cla_disable_borderColorAlpha="0.6"
-        app:cla_disable_borderWidth="2dp"
-        app:cla_disable_radius="15dp"
-        app:cla_disable_textColor="@color/white"
-        app:cla_focus_backgroundColor="@color/black"
-        app:cla_focus_borderColor="@color/c1"
-        app:cla_focus_borderColorAlpha="0.7"
-        app:cla_focus_borderWidth="4dp"
-        app:cla_focus_radiusAdjustBounds="true"
-        app:cla_focus_textColor="@color/white"
-        app:cla_focus_textColorAlpha="0.7"
-        app:cla_normal_backgroundColor="@color/c1"
-        app:cla_normal_backgroundColorAlpha="0.1"
-        app:cla_normal_borderColor="@color/c3"
-        app:cla_normal_borderColorAlpha="0.3"
-        app:cla_normal_borderDashGap="10dp"
-        app:cla_normal_borderDashWidth="5dp"
-        app:cla_normal_borderWidth="2dp"
-        app:cla_normal_bottomLeftRadius="10dp"
-        app:cla_normal_bottomRightRadius="20dp"
-        app:cla_normal_radiusAdjustBounds="true"
-        app:cla_normal_textColor="@color/black"
-        app:cla_normal_textColorAlpha="0.5"
-        app:cla_normal_topLeftRadius="20dp"
-        app:cla_normal_topRightRadius="10dp"
-        app:cla_press_backgroundColor="@color/c2"
-        app:cla_press_backgroundColorAlpha="0.1"
-        app:cla_press_borderColor="@color/black"
-        app:cla_press_borderColorAlpha="0.1"
-        app:cla_press_borderWidth="4dp"
-        app:cla_press_radiusAdjustBounds="true"
-        app:cla_press_textColor="@color/black"
-        app:cla_press_textColorAlpha="0.3"
-        app:cla_select_backgroundColor="@color/colorPrimaryDark"
-        app:cla_select_backgroundColorAlpha="0.1"
-        app:cla_select_borderColor="@color/colorPrimaryDark"
-        app:cla_select_borderColorAlpha="0.3"
-        app:cla_select_borderWidth="1dp"
-        app:cla_select_bottomLeftRadius="20dp"
-        app:cla_select_bottomRightRadius="10dp"
-        app:cla_select_textColor="@color/white"
-        app:cla_select_topLeftRadius="10dp"
-        app:cla_select_topRightRadius="20dp" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnSelect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="tvRound选中" />
-
-        <Button
-            android:id="@+id/btnFocus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="tvRound获取焦点" />
-
-        <Button
-            android:id="@+id/btnActivated"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="tvRound设置active" />
-
-        <Button
-            android:id="@+id/btnChangeActivated"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="改变tvRound的activated的设置" />
-
-        <Button
-            android:id="@+id/btnDisable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="tvRound设置disable" />
+        android:orientation="vertical"
+        android:paddingBottom="100dp"
+        tools:context=".MainActivity">
 
         <cn.cla.round.view.widget.ClaRoundTextView
-            android:id="@+id/tvPress"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvRound"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/c1"
-            android:padding="12dp"
-            android:text="按压测试"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:cla_view_changeAlpha_whenPress="true"
-            app:cla_view_pressAlpha="0.1"
-            tools:ignore="HardcodedText" />
-
-        <cn.cla.round.view.widget.ClaRoundTextView
-            android:id="@+id/tvDisable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/c1"
-            android:padding="12dp"
-            android:text="disable测试"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            app:cla_view_changeAlpha_whenDisable="true"
-            tools:ignore="HardcodedText" />
-
-        <cn.cla.round.view.widget.ClaRoundTextView
-            android:id="@+id/tvBottomLine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:gravity="center"
-            android:padding="15dp"
-            android:text="底部线条测试"
-            android:textColor="@color/black"
+            android:padding="18dp"
+            android:text="这是测试"
             android:textSize="16sp"
-            app:cla_view_lineBottomSpace="10dp"
+            app:cla_activated_backgroundColor="@color/transparent"
+            app:cla_activated_textColor="@color/black"
+            app:cla_activated_textColorAlpha="0.5"
+            app:cla_disable_backgroundColor="@color/c5"
+            app:cla_disable_backgroundColorAlpha="0.5"
+            app:cla_disable_borderColor="@color/black"
+            app:cla_disable_borderColorAlpha="0.6"
+            app:cla_disable_borderWidth="2dp"
+            app:cla_disable_radius="15dp"
+            app:cla_disable_textColor="@color/white"
+            app:cla_focus_backgroundColor="@color/black"
+            app:cla_focus_borderColor="@color/c1"
+            app:cla_focus_borderColorAlpha="0.7"
+            app:cla_focus_borderWidth="4dp"
+            app:cla_focus_radiusAdjustBounds="true"
+            app:cla_focus_textColor="@color/white"
+            app:cla_focus_textColorAlpha="0.7"
+            app:cla_normal_backgroundColor="@color/c1"
+            app:cla_normal_backgroundColorAlpha="0.1"
+            app:cla_normal_borderColor="@color/c3"
+            app:cla_normal_borderColorAlpha="0.3"
+            app:cla_normal_borderDashGap="10dp"
+            app:cla_normal_borderDashWidth="5dp"
+            app:cla_normal_borderWidth="2dp"
+            app:cla_normal_bottomLeftRadius="10dp"
+            app:cla_normal_bottomRightRadius="20dp"
+            app:cla_normal_radiusAdjustBounds="true"
+            app:cla_normal_textColor="@color/black"
+            app:cla_normal_textColorAlpha="0.5"
+            app:cla_normal_topLeftRadius="20dp"
+            app:cla_normal_topRightRadius="10dp"
+            app:cla_press_backgroundColor="@color/c2"
+            app:cla_press_backgroundColorAlpha="0.1"
+            app:cla_press_borderColor="@color/black"
+            app:cla_press_borderColorAlpha="0.1"
+            app:cla_press_borderWidth="4dp"
+            app:cla_press_radiusAdjustBounds="true"
+            app:cla_press_textColor="@color/black"
+            app:cla_press_textColorAlpha="0.3"
+            app:cla_select_backgroundColor="@color/colorPrimaryDark"
+            app:cla_select_backgroundColorAlpha="0.1"
+            app:cla_select_borderColor="@color/colorPrimaryDark"
+            app:cla_select_borderColorAlpha="0.3"
+            app:cla_select_borderWidth="1dp"
+            app:cla_select_bottomLeftRadius="20dp"
+            app:cla_select_bottomRightRadius="10dp"
+            app:cla_select_textColor="@color/white"
+            app:cla_select_topLeftRadius="10dp"
+            app:cla_select_topRightRadius="20dp" />
+
+        <cn.cla.round.view.widget.ClaRoundConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="horizontal"
+            android:padding="10dp"
             app:cla_view_lineColor="@color/black"
-            app:cla_view_lineColorAlpha="0.5"
-            app:cla_view_lineDashGap="5dp"
-            app:cla_view_lineDashWidth="10dp"
-            app:cla_view_lineLeftSpace="30dp"
-            app:cla_view_lineRightSpace="10dp"
-            app:cla_view_lineSpace="15dp"
-            app:cla_view_lineTopSpace="5dp"
-            app:cla_view_lineWidth="1dp"
+            app:cla_view_lineColorAlpha="0.1"
+            app:cla_view_lineWidth="2dp"
             app:cla_view_showBottomLine="true"
-            app:cla_view_showLeftLine="true"
-            app:cla_view_showRightLine="true"
-            app:cla_view_showTopLine="true"
-            tools:ignore="HardcodedText" />
+            app:cla_view_showTopLine="true">
 
-        <cn.cla.round.view.widget.ClaRoundTextView
-            android:id="@+id/tvChangeLine"
-            android:layout_width="wrap_content"
+            <cn.cla.round.view.widget.ClaRoundButton
+                android:id="@+id/btnSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="tvRound选中"
+                app:cla_normal_backgroundColor="@color/c3"
+                app:cla_normal_radiusAdjustBounds="true"
+                app:cla_normal_textColor="@color/white"
+                app:cla_press_backgroundColor="@color/white"
+                app:cla_press_radiusAdjustBounds="true"
+                app:cla_press_textColor="@color/c3" />
+
+            <Button
+                android:id="@+id/btnFocus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tvRound获取焦点" />
+
+            <Button
+                android:id="@+id/btnActivated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tvRound设置active" />
+
+            <Button
+                android:id="@+id/btnChangeActivated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="改变tvRound的activated的设置" />
+
+            <Button
+                android:id="@+id/btnDisable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tvRound设置disable" />
+
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvPress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/c1"
+                android:padding="12dp"
+                android:text="按压测试"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:cla_view_changeAlpha_whenPress="true"
+                app:cla_view_pressAlpha="0.1"
+                tools:ignore="HardcodedText" />
+
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvDisable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/c1"
+                android:padding="12dp"
+                android:text="disable测试"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:cla_view_changeAlpha_whenDisable="true"
+                tools:ignore="HardcodedText" />
+
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvBottomLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="底部线条测试"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:cla_view_lineBottomSpace="10dp"
+                app:cla_view_lineColor="@color/black"
+                app:cla_view_lineColorAlpha="0.5"
+                app:cla_view_lineDashGap="5dp"
+                app:cla_view_lineDashWidth="10dp"
+                app:cla_view_lineLeftSpace="30dp"
+                app:cla_view_lineRightSpace="10dp"
+                app:cla_view_lineSpace="15dp"
+                app:cla_view_lineTopSpace="5dp"
+                app:cla_view_lineWidth="1dp"
+                app:cla_view_showBottomLine="true"
+                app:cla_view_showLeftLine="true"
+                app:cla_view_showRightLine="true"
+                app:cla_view_showTopLine="true"
+                tools:ignore="HardcodedText" />
+
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvChangeLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="改变线条"
+                android:textColor="@color/black"
+                app:cla_view_changeAlpha_whenPress="true" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="btnSelect,btnFocus,btnActivated,btnChangeActivated,btnDisable,tvPress,tvDisable,tvBottomLine,tvChangeLine"
+                app:flow_horizontalAlign="end"
+                app:flow_horizontalGap="10dp"
+                app:flow_horizontalStyle="packed"
+                app:flow_verticalAlign="top"
+                app:flow_verticalGap="10dp"
+                app:flow_wrapMode="chain"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </cn.cla.round.view.widget.ClaRoundConstraintLayout>
+
+        <cn.cla.round.view.widget.ClaRoundLinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="改变线条"
-            android:textColor="@color/black"
-            app:cla_view_changeAlpha_whenPress="true" />
+            android:layout_margin="15dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            app:cla_normal_borderColor="@color/black"
+            app:cla_normal_borderColorAlpha="0.5"
+            app:cla_normal_borderDashWidth="5dp"
+            app:cla_normal_borderWidth="2dp"
+            app:cla_normal_radius="15dp">
 
-        <androidx.constraintlayout.helper.widget.Flow
-            android:layout_width="0dp"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="linearLayout测试"
+                android:textColor="@color/black" />
+
+        </cn.cla.round.view.widget.ClaRoundLinearLayout>
+
+        <cn.cla.round.view.widget.ClaRoundRelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="btnSelect,btnFocus,btnActivated,btnChangeActivated,btnDisable,tvPress,tvDisable,tvBottomLine,tvChangeLine"
-            app:flow_horizontalAlign="end"
-            app:flow_horizontalGap="10dp"
-            app:flow_horizontalStyle="packed"
-            app:flow_verticalAlign="top"
-            app:flow_verticalGap="10dp"
-            app:flow_wrapMode="chain"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="5dp"
+            app:cla_press_borderColor="@color/black"
+            app:cla_press_borderWidth="1dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_launcher" />
 
-</LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:text="linearLayout测试"
+                android:textColor="@color/black" />
+
+        </cn.cla.round.view.widget.ClaRoundRelativeLayout>
+
+        <cn.cla.round.view.widget.ClaRoundImageView
+            android:id="@+id/ivTest"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:src="@mipmap/ic_launcher_round"
+            app:cla_select_backgroundColor="@color/c3"
+            app:cla_select_backgroundColorAlpha="0.7"
+            app:cla_select_borderColor="@color/c3"
+            app:cla_select_borderDashGap="5dp"
+            app:cla_select_borderDashWidth="10dp"
+            app:cla_select_borderWidth="2dp"
+            app:cla_select_radiusAdjustBounds="true"
+            app:cla_view_changeAlpha_whenPress="true"
+            app:cla_view_pressAlpha="0.1" />
+
+    </LinearLayout>
+
+</ScrollView>
