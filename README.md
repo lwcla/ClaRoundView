@@ -1,7 +1,15 @@
 # ClaRoundView
 
 不用写xml，控制view的边框以及背景色</br>
+参考了QmUi和BackgroundLibrary的实现方式</br>
+其实就是根据属性去动态生成drawable，然后设置成view的背景图</br>
+方案定下之后就是一个体力劳动 0.0</br>
+</br>
+qmui我是觉得太重了，为了这么个功能引入整个库，划不来。而且之前用qmui的TitleBar,坑好多，还是自己写的能控制得住</br>
+BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能简单一点
+</br>
 
+### 效果
 <img src="https://github.com/lwcla/ClaRoundView/blob/main/img/SM-G9500_20220209173148.gif" width=270 height=555>
 
 ### 使用方式
