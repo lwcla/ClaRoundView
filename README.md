@@ -1,7 +1,8 @@
 # ClaRoundView
 
-用代码去控制view的边框以及背景色
+不用写xml，控制view的边框以及背景色</br>
 
+<img src="https://github.com/lwcla/ClaRoundView/blob/main/img/SM-G9500_20220209173148.gif" width=270 height=555>
 
 ### 使用方式
 ```java
@@ -109,6 +110,104 @@
  ...其他属性同普通状态...
  <!--disable状态-->
 
+```
+
+### 代码中设置样式
+
+```java
+//可以设置的样式
+enum class ClaRoundStateType {
+    NORMAL, //普通状态
+    PRESSED,//按压状态
+    SELECTED,//选中状态
+    FOCUS,//获取焦点状态
+    ACTIVATED,//激活状态
+    DISABLE, //disable状态
+}
+````
+
+```java
+//设置按压时的背景以及文字颜色
+ tvRound.setClaBackground(ClaRoundStateType.PRESSED) {
+     //按压时显示为渐变色
+     //这里为了考虑灵活性，没有在xml中定义属性，如果要设置渐变色，那么就只能在代码中设置
+     val gd = GradientDrawable()
+     gd.shape = GradientDrawable.RECTANGLE
+     gd.cornerRadius = 12.dpf
+     gd.setStroke(4, Color.RED) //设置宽度为10px的红色描边
+     //设置线性渐变，除此之外还有：GradientDrawable.SWEEP_GRADIENT（扫描式渐变），GradientDrawable.RADIAL_GRADIENT（圆形渐变）
+     gd.gradientType = GradientDrawable.LINEAR_GRADIENT
+     //增加渐变效果需要使用setColors方法来设置颜色（中间可以增加多个颜色值）
+     gd.colors = intArrayOf(Color.RED, Color.BLUE, Color.BLACK, Color.WHITE, Color.YELLOW)
+     drawable = gd
+
+     //按压时修改文字颜色
+     textColor = colorValue(R.color.white)
+     textColorAlpha = 1f
+ }
+```
+
+```java
+btnChangeActivated.setOnClickListener {
+     thread {
+         runOnUiThread {
+             tvRound.setClaBackground(ClaRoundStateType.ACTIVATED) {
+                 //设置边框
+                 borderColor = colorValue(R.color.c1)
+                 borderColorAlpha = 0.5f
+                 borderWidth = 4.dp.toFloat()
+                 bgColor = colorValue(R.color.c1)
+                 bgColorAlpha = 0.2f
+                 radius = 15.dp.toFloat()
+                 textColor = colorValue(R.color.c1)
+                 textColorAlpha = 0.5f
+             }
+         }
+
+         Thread.sleep(2000)
+
+         runOnUiThread {
+             tvRound.setClaBackground(ClaRoundStateType.ACTIVATED) {
+                 //设置成一张图片
+                 drawable = drawableValue(R.mipmap.ic_launcher)
+             }
+         }
+
+         Thread.sleep(2000)
+
+         runOnUiThread {
+             tvRound.setClaBackground(ClaRoundStateType.ACTIVATED) {
+                 //设置渐变色
+                 val gd = GradientDrawable()
+                 gd.shape = GradientDrawable.RECTANGLE
+                 gd.cornerRadius = 12.dp.toFloat()
+                 gd.setStroke(4, Color.RED) //设置宽度为10px的红色描边
+                 //设置线性渐变，除此之外还有：GradientDrawable.SWEEP_GRADIENT（扫描式渐变），GradientDrawable.RADIAL_GRADIENT（圆形渐变）
+                 gd.gradientType = GradientDrawable.LINEAR_GRADIENT
+                 //增加渐变效果需要使用setColors方法来设置颜色（中间可以增加多个颜色值）
+                 gd.colors = intArrayOf(Color.RED, Color.BLUE, Color.BLACK, Color.WHITE, Color.YELLOW)
+                 drawable = gd
+
+                 textColor = colorValue(R.color.white)
+                 textColorAlpha = 1f
+             }
+         }
+     }
+ }
+```
+
+```java
+//代码设置view上下左右的线条
+ tvChangeLine.setOnClickListener {
+     tvBottomLine.resetClaLine {
+         //虚线长度设置为0，也就是虚线改成实线
+         lineDashWidth = 0f
+         //把线条左边的间距改为2dp
+         lineLeftSpace = 2.dp.toFloat()
+         //修改线条的颜色
+         lineColor = colorValue(R.color.c3)
+     }
+ }
 ```
 
 ### 参考
