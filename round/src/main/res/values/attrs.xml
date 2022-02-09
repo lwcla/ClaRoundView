@@ -10,6 +10,7 @@
     <!--disable状态按钮的透明度 0f-1f-->
     <attr name="cla_view_disableAlpha" format="float" />
 
+    <!--在view的上下左右分别画一条线-->
     <!--线条的粗度-->
     <attr name="cla_view_lineWidth" format="dimension" />
     <!--虚线的长度-->
@@ -40,22 +41,37 @@
     <attr name="cla_view_showBottomLine" format="boolean" />
 
     <!--普通状态-->
+    <!--背景色-->
     <attr name="cla_normal_backgroundColor" format="color" />
+    <!--背景色的透明度 0-1-->
     <attr name="cla_normal_backgroundColorAlpha" format="float" />
+    <!--边框的宽度-->
     <attr name="cla_normal_borderWidth" format="dimension" />
+    <!--边框虚线的宽度，设置为0时就不显示虚线-->
     <attr name="cla_normal_borderDashWidth" format="dimension" />
+    <!--边框虚线的距离，不设置时等于borderDashWidth-->
     <attr name="cla_normal_borderDashGap" format="dimension" />
+    <!--边框的颜色-->
     <attr name="cla_normal_borderColor" format="color" />
+    <!--边框颜色的透明度 0-1-->
     <attr name="cla_normal_borderColorAlpha" format="float" />
     <!--设置圆角大小是否自动适应为 View 的高度的一半-->
     <attr name="cla_normal_radiusAdjustBounds" format="boolean" />
+    <!--边框的左上圆角-->
     <attr name="cla_normal_topLeftRadius" format="dimension" />
+    <!--边框的右上圆角-->
     <attr name="cla_normal_topRightRadius" format="dimension" />
+    <!--边框的左下圆角-->
     <attr name="cla_normal_bottomLeftRadius" format="dimension" />
+    <!--边框的右下圆角-->
     <attr name="cla_normal_bottomRightRadius" format="dimension" />
+    <!--边框的圆角-->
     <attr name="cla_normal_radius" format="dimension" />
+    <!--设置背景图片，这个优先级最高，有图片的情况下，背景色和边框都不会生效-->
     <attr name="cla_normal_drawable" format="reference" />
+    <!--文字的颜色-->
     <attr name="cla_normal_textColor" format="color" />
+    <!--文字颜色的透明读 0-1-->
     <attr name="cla_normal_textColorAlpha" format="float" />
     <!--普通状态-->
 
