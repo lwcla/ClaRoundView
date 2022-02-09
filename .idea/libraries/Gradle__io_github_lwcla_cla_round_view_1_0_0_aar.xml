@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.lwcla:cla_round_view:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../Android/gradle/caches/transforms-3/18f92c95f359bbb8eabe6f4ed49d05fd/transformed/jetified-cla_round_view-1.0.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../Android/gradle/caches/transforms-3/18f92c95f359bbb8eabe6f4ed49d05fd/transformed/jetified-cla_round_view-1.0.0/res" />
+      <root url="file://$PROJECT_DIR$/../../../Android/gradle/caches/transforms-3/18f92c95f359bbb8eabe6f4ed49d05fd/transformed/jetified-cla_round_view-1.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../Android/gradle/caches/modules-2/files-2.1/io.github.lwcla/cla_round_view/1.0.0/92877729fd9086c80022aab47654fc80d9993a15/cla_round_view-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
