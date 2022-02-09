@@ -148,6 +148,7 @@ enum class ClaRoundStateType {
 ```
 
 ```java
+//连续修改同一个状态的背景色
 btnChangeActivated.setOnClickListener {
      thread {
          runOnUiThread {
@@ -156,9 +157,11 @@ btnChangeActivated.setOnClickListener {
                  borderColor = colorValue(R.color.c1)
                  borderColorAlpha = 0.5f
                  borderWidth = 4.dp.toFloat()
+                 radius = 15.dp.toFloat()
+                 //设置背景色
                  bgColor = colorValue(R.color.c1)
                  bgColorAlpha = 0.2f
-                 radius = 15.dp.toFloat()
+                 //设置文字颜色
                  textColor = colorValue(R.color.c1)
                  textColorAlpha = 0.5f
              }
@@ -187,7 +190,8 @@ btnChangeActivated.setOnClickListener {
                  //增加渐变效果需要使用setColors方法来设置颜色（中间可以增加多个颜色值）
                  gd.colors = intArrayOf(Color.RED, Color.BLUE, Color.BLACK, Color.WHITE, Color.YELLOW)
                  drawable = gd
-
+                 
+                 //设置文字颜色
                  textColor = colorValue(R.color.white)
                  textColorAlpha = 1f
              }
