@@ -19,9 +19,9 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
 
 ### 属性说明
 ```xml
- <!--是否在按压状态改变按钮的透明度-->
+ <!--是否在按压状态改变按钮的透明度 默认为false-->
  <attr name="cla_view_changeAlpha_whenPress" format="boolean" />
- <!--是否在disable状态改变按钮的透明度-->
+ <!--是否在disable状态改变按钮的透明度 默认为false-->
  <attr name="cla_view_changeAlpha_whenDisable" format="boolean" />
  <!--按压状态按钮的透明度 0f-1f-->
  <attr name="cla_view_pressAlpha" format="float" />
@@ -37,7 +37,7 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
  <attr name="cla_view_lineDashGap" format="dimension" />
  <!--线条颜色-->
  <attr name="cla_view_lineColor" format="color" />
- <!--线条颜色透明度-->
+ <!--线条颜色透明度 0f-1f-->
  <attr name="cla_view_lineColorAlpha" format="float" />
  <!--线条与两边的空间-->
  <attr name="cla_view_lineSpace" format="dimension" />
@@ -61,7 +61,7 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
  <!--普通状态-->
  <!--背景色-->
  <attr name="cla_normal_backgroundColor" format="color" />
- <!--背景色的透明度 0-1-->
+ <!--背景色的透明度 0f-1f-->
  <attr name="cla_normal_backgroundColorAlpha" format="float" />
  <!--边框的宽度-->
  <attr name="cla_normal_borderWidth" format="dimension" />
@@ -71,7 +71,7 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
  <attr name="cla_normal_borderDashGap" format="dimension" />
  <!--边框的颜色-->
  <attr name="cla_normal_borderColor" format="color" />
- <!--边框颜色的透明度 0-1-->
+ <!--边框颜色的透明度 0f-1f-->
  <attr name="cla_normal_borderColorAlpha" format="float" />
  <!--设置圆角大小是否自动适应为 View 的高度的一半-->
  <attr name="cla_normal_radiusAdjustBounds" format="boolean" />
@@ -89,7 +89,7 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
  <attr name="cla_normal_drawable" format="reference" />
  <!--文字的颜色-->
  <attr name="cla_normal_textColor" format="color" />
- <!--文字颜色的透明读 0-1-->
+ <!--文字颜色的透明度 0f-1f-->
  <attr name="cla_normal_textColorAlpha" format="float" />
  <!--普通状态-->
  
