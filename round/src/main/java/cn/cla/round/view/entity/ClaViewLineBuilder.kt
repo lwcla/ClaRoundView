@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.graphics.DashPathEffect
 import android.graphics.Paint
 import android.graphics.Path
+import androidx.annotation.ColorInt
 import cn.cla.round.view.utils.INVALID_VALUE
 import cn.cla.round.view.utils.INVALID_VALUE_F
 import cn.cla.round.view.utils.changeColorAlpha
@@ -14,7 +15,7 @@ import cn.cla.round.view.utils.changeColorAlpha
  * @property lineDashWidth 虚线长度
  * @property lineDashGap 虚线间隔
  * @property lineColor 线条颜色
- * @property lineColorAlpha 线条的透明度
+ * @property lineColorAlpha 线条的透明度 0-1
  * @property lineSpace 线条和上下左右的间隔
  * @property showTop 是否显示顶部
  * @property showLeft 是否显示左边
@@ -30,7 +31,7 @@ data class ClaViewLineBuilder(
     var lineWidth: Float = 0f,
     var lineDashWidth: Float = 0f,
     var lineDashGap: Float = 0f,
-    var lineColor: Int = INVALID_VALUE,
+    @ColorInt var lineColor: Int = INVALID_VALUE,
     var lineColorAlpha: Float = INVALID_VALUE_F,
     var lineSpace: Float = 0f,
     var showTop: Boolean = false,
@@ -46,13 +47,18 @@ data class ClaViewLineBuilder(
     internal var pathEffect2: DashPathEffect? = null
 ) {
 
-    val lineRealColor get() = lineColor.changeColorAlpha(lineColorAlpha)
+    internal val lineRealColor get() = lineColor.changeColorAlpha(lineColorAlpha)
 
-    val showLine get() = showTop || showBottom || showLeft || showRight
+    internal val showLine get() = showTop || showBottom || showLeft || showRight
 
-    val hasLine get() = lineWidth != 0f && lineRealColor != INVALID_VALUE
+    internal val hasLine get() = lineWidth != 0f && lineRealColor != INVALID_VALUE
 
-    val paint: Paint
+    internal val topSpace get() = if (lineTopSpace > 0) lineTopSpace else lineSpace
+    internal val bottomSpace get() = if (lineBottomSpace > 0) lineBottomSpace else lineSpace
+    internal val leftSpace get() = if (lineLeftSpace > 0) lineLeftSpace else lineSpace
+    internal val rightSpace get() = if (lineRightSpace > 0) lineRightSpace else lineSpace
+
+    internal val paint: Paint
         get() {
             var p = paint2
             if (p == null) {
@@ -78,7 +84,7 @@ data class ClaViewLineBuilder(
             return p
         }
 
-    val pathEffect: DashPathEffect
+    internal val pathEffect: DashPathEffect
         get() {
             var p = pathEffect2
             if (p == null) {

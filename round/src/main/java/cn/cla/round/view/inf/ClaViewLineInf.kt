@@ -19,8 +19,9 @@ interface ClaViewLineInf {
 
     private val viewWidth get() = claView.width.toFloat()
     private val viewHeight get() = claView.height.toFloat()
-    private val lineEndX get() = viewWidth - builder.lineRightSpace
-    private val lineEndY get() = viewHeight - builder.lineBottomSpace
+
+    private val lineEndX get() = viewWidth - builder.rightSpace
+    private val lineEndY get() = viewHeight - builder.bottomSpace
 
     fun initLine(context: Context, attr: AttributeSet?) {
         val array = context.obtainStyledAttributes(attr, R.styleable.ClaViewLine)
@@ -40,13 +41,13 @@ interface ClaViewLineInf {
         val showBottom = array.getBoolean(R.styleable.ClaViewLine_cla_view_showBottomLine, false)
 
         val lineTopSpace =
-            array.getDimension(R.styleable.ClaViewLine_cla_view_lineTopSpace, lineSpace)
+            array.getDimension(R.styleable.ClaViewLine_cla_view_lineTopSpace, 0f)
         val lineBottomSpace =
-            array.getDimension(R.styleable.ClaViewLine_cla_view_lineBottomSpace, lineSpace)
+            array.getDimension(R.styleable.ClaViewLine_cla_view_lineBottomSpace, 0f)
         val lineLeftSpace =
-            array.getDimension(R.styleable.ClaViewLine_cla_view_lineLeftSpace, lineSpace)
+            array.getDimension(R.styleable.ClaViewLine_cla_view_lineLeftSpace, 0f)
         val lineRightSpace =
-            array.getDimension(R.styleable.ClaViewLine_cla_view_lineRightSpace, lineSpace)
+            array.getDimension(R.styleable.ClaViewLine_cla_view_lineRightSpace, 0f)
 
         array.recycle()
 
@@ -81,32 +82,31 @@ interface ClaViewLineInf {
             }
 
             kotlin.runCatching {
-
                 //画4个边
                 if (showTop) {
                     path.reset()
-                    path.moveTo(lineLeftSpace, 0f)
+                    path.moveTo(leftSpace, 0f)
                     path.lineTo(lineEndX, 0f)
                     canvas.drawPath(path, paint)
                 }
 
                 if (showBottom) {
                     path.reset()
-                    path.moveTo(lineLeftSpace, viewHeight)
+                    path.moveTo(leftSpace, viewHeight)
                     path.lineTo(lineEndX, viewHeight)
                     canvas.drawPath(path, paint)
                 }
 
                 if (showLeft) {
                     path.reset()
-                    path.moveTo(0f, lineTopSpace)
+                    path.moveTo(0f, topSpace)
                     path.lineTo(0f, lineEndY)
                     canvas.drawPath(path, paint)
                 }
 
                 if (showRight) {
                     path.reset()
-                    path.moveTo(viewWidth, lineTopSpace)
+                    path.moveTo(viewWidth, topSpace)
                     path.lineTo(viewWidth, lineEndY)
                     canvas.drawPath(path, paint)
                 }

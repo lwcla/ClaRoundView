@@ -12,19 +12,21 @@ import cn.cla.round.view.utils.lazyNull
 /**
  * 圆角图builder
  * @property bgColor 背景颜色
- * @property bgColorAlpha 背景颜色的透明度
+ * @property bgColorAlpha 背景颜色的透明度 0-1
  * @property borderWidth 边框宽度
  * @property borderColor 边框颜色
- * @property borderColorAlpha 边框颜色透明度
+ * @property borderColorAlpha 边框颜色透明度 0-1
  * @property radiusAdjustBounds 设置圆角大小是否自动适应为 View 的高度的一半
  * @property dashWidth 边框虚线的长度
  * @property dashGap 边框虚线的间隔距离
- * @property topLeftRadius
- * @property topRightRadius
- * @property bottomLeftRadius
- * @property bottomRightRadius
- * @property radius
+ * @property topLeftRadius 左上的圆角
+ * @property topRightRadius 右上的圆角
+ * @property bottomLeftRadius 左下的圆角
+ * @property bottomRightRadius 右下的圆角
+ * @property radius 整体的圆角
  * @property drawable 设置背景图，这个优先级最高
+ * @property textColor 文字的颜色
+ * @property textColorAlpha 文字颜色戴尔透明度 0-1
  * @constructor
  */
 data class ClaRoundViewBuilder(
@@ -42,23 +44,23 @@ data class ClaRoundViewBuilder(
     var bottomLeftRadius: Float = INVALID_VALUE_F,
     var bottomRightRadius: Float = INVALID_VALUE_F,
     var radius: Float = INVALID_VALUE_F,
-    var textColor: Int = INVALID_VALUE,
+    @ColorInt var textColor: Int = INVALID_VALUE,
     var textColorAlpha: Float = INVALID_VALUE_F,
 ) {
 
     private val roundDrawable by lazyNull { ClaRoundDrawable(this) }
 
-    val hasDrawable get() = drawable != null || hasBorder || bgColor != INVALID_VALUE
+    internal val hasDrawable get() = drawable != null || hasBorder || bgColor != INVALID_VALUE
 
-    val readDrawable get() = drawable ?: roundDrawable.also { it.setRoundAndColor() }
+    internal val readDrawable get() = drawable ?: roundDrawable.also { it.setRoundAndColor() }
 
-    val hasRadius get() = hasAllRadius || hasSingleRadius
+    internal val hasRadius get() = hasAllRadius || hasSingleRadius
 
-    val hasAllRadius get() = radius != INVALID_VALUE_F
+    internal val hasAllRadius get() = radius != INVALID_VALUE_F
 
-    val hasSingleRadius get() = !hasAllRadius && (topLeftRadius != INVALID_VALUE_F || topRightRadius != INVALID_VALUE_F || bottomLeftRadius != INVALID_VALUE_F || bottomRightRadius != INVALID_VALUE_F)
+    internal val hasSingleRadius get() = !hasAllRadius && (topLeftRadius != INVALID_VALUE_F || topRightRadius != INVALID_VALUE_F || bottomLeftRadius != INVALID_VALUE_F || bottomRightRadius != INVALID_VALUE_F)
 
-    val radii
+    internal val radii
         get() = floatArrayOf(
             topLeftRadius, topLeftRadius,
             topRightRadius, topRightRadius,
@@ -66,19 +68,19 @@ data class ClaRoundViewBuilder(
             bottomLeftRadius, bottomLeftRadius,
         )
 
-    val radiusAdjust get() = !hasRadius && radiusAdjustBounds
+    internal val radiusAdjust get() = !hasRadius && radiusAdjustBounds
 
-    val hasBorder get() = borderWidth >= 0 && borderColor != INVALID_VALUE
+    internal val hasBorder get() = borderWidth >= 0 && borderColor != INVALID_VALUE
 
-    val hasBgColor get() = bgColor != INVALID_VALUE
+    internal val hasBgColor get() = bgColor != INVALID_VALUE
 
-    val aBgColor get() = bgColor.changeColorAlpha(bgColorAlpha)
+    internal val aBgColor get() = bgColor.changeColorAlpha(bgColorAlpha)
 
-    val aBorderColor get() = borderColor.changeColorAlpha(borderColorAlpha)
+    internal val aBorderColor get() = borderColor.changeColorAlpha(borderColorAlpha)
 
-    val aTextColor get() = textColor.changeColorAlpha(textColorAlpha)
+    internal val aTextColor get() = textColor.changeColorAlpha(textColorAlpha)
 
-    val hasTextColor get() = textColor != INVALID_VALUE
+    internal val hasTextColor get() = textColor != INVALID_VALUE
 }
 
 internal fun ClaRoundViewBuilder.addToStateDrawable(list: MutableList<Pair<IntArray, Drawable>>, state: Int?) {

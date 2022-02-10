@@ -5,12 +5,12 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import cn.cla.round.view.inf.ClaRoundStateType
@@ -37,17 +37,22 @@ class MainActivity : AppCompatActivity() {
         val btnChangeActivated = findViewById<Button>(R.id.btnChangeActivated)
         val btnDisable = findViewById<Button>(R.id.btnDisable)
         val ivTest = findViewById<ClaRoundImageView>(R.id.ivTest)
+        val tvLineTest = findViewById<ClaRoundTextView>(R.id.tvLineTest)
 
         tvRound.setClaBackground(ClaRoundStateType.PRESSED) {
+            //按压时显示为渐变色
+            //这里为了考虑灵活性，没有在xml中定义属性，如果要设置渐变色，那么就只能在代码中设置
             val gd = GradientDrawable()
             gd.shape = GradientDrawable.RECTANGLE
             gd.cornerRadius = 12.dpf
             gd.setStroke(4, Color.RED) //设置宽度为10px的红色描边
-            gd.gradientType =
-                GradientDrawable.LINEAR_GRADIENT //设置线性渐变，除此之外还有：GradientDrawable.SWEEP_GRADIENT（扫描式渐变），GradientDrawable.RADIAL_GRADIENT（圆形渐变）
-            gd.colors =
-                intArrayOf(Color.RED, Color.BLUE, Color.BLACK, Color.WHITE, Color.YELLOW) //增加渐变效果需要使用setColors方法来设置颜色（中间可以增加多个颜色值）
+            //设置线性渐变，除此之外还有：GradientDrawable.SWEEP_GRADIENT（扫描式渐变），GradientDrawable.RADIAL_GRADIENT（圆形渐变）
+            gd.gradientType = GradientDrawable.LINEAR_GRADIENT
+            //增加渐变效果需要使用setColors方法来设置颜色（中间可以增加多个颜色值）
+            gd.colors = intArrayOf(Color.RED, Color.BLUE, Color.BLACK, Color.WHITE, Color.YELLOW)
             drawable = gd
+
+            //按压时修改文字颜色
             textColor = colorValue(R.color.white)
             textColorAlpha = 1f
         }
@@ -82,14 +87,16 @@ class MainActivity : AppCompatActivity() {
             thread {
                 runOnUiThread {
                     tvRound.setClaBackground(ClaRoundStateType.ACTIVATED) {
+                        //设置边框
                         borderColor = colorValue(R.color.c1)
                         borderColorAlpha = 0.5f
                         borderWidth = 4.dp.toFloat()
                         bgColor = colorValue(R.color.c1)
                         bgColorAlpha = 0.2f
+                        radius = 15.dp.toFloat()
+
                         textColor = colorValue(R.color.c1)
                         textColorAlpha = 0.5f
-                        radius = 15.dp.toFloat()
                     }
                 }
 
@@ -97,6 +104,7 @@ class MainActivity : AppCompatActivity() {
 
                 runOnUiThread {
                     tvRound.setClaBackground(ClaRoundStateType.ACTIVATED) {
+                        //设置成一张图片
                         drawable = drawableValue(R.mipmap.ic_launcher)
                     }
                 }
@@ -105,15 +113,18 @@ class MainActivity : AppCompatActivity() {
 
                 runOnUiThread {
                     tvRound.setClaBackground(ClaRoundStateType.ACTIVATED) {
+                        //设置渐变色
                         val gd = GradientDrawable()
                         gd.shape = GradientDrawable.RECTANGLE
                         gd.cornerRadius = 12.dp.toFloat()
                         gd.setStroke(4, Color.RED) //设置宽度为10px的红色描边
-                        gd.gradientType =
-                            GradientDrawable.LINEAR_GRADIENT //设置线性渐变，除此之外还有：GradientDrawable.SWEEP_GRADIENT（扫描式渐变），GradientDrawable.RADIAL_GRADIENT（圆形渐变）
+                        //设置线性渐变，除此之外还有：GradientDrawable.SWEEP_GRADIENT（扫描式渐变），GradientDrawable.RADIAL_GRADIENT（圆形渐变）
+                        gd.gradientType = GradientDrawable.LINEAR_GRADIENT
+                        //增加渐变效果需要使用setColors方法来设置颜色（中间可以增加多个颜色值）
                         gd.colors =
-                            intArrayOf(Color.RED, Color.BLUE, Color.BLACK, Color.WHITE, Color.YELLOW) //增加渐变效果需要使用setColors方法来设置颜色（中间可以增加多个颜色值）
+                            intArrayOf(Color.RED, Color.BLUE, Color.BLACK, Color.WHITE, Color.YELLOW)
                         drawable = gd
+
                         textColor = colorValue(R.color.white)
                         textColorAlpha = 1f
                     }
@@ -139,6 +150,15 @@ class MainActivity : AppCompatActivity() {
 
         ivTest.setOnClickListener {
             ivTest.isSelected = !ivTest.isSelected
+        }
+
+        tvLineTest.resetClaLine {
+            lineSpace = 30.dpf
+            lineColor = colorValue(R.color.black)
+            lineColorAlpha = 0.4f
+            lineWidth = 2.dpf
+            lineLeftSpace = 10.dpf
+            showBottom = true
         }
     }
 }

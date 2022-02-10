@@ -6,12 +6,23 @@ import cn.cla.round.view.entity.ClaRoundViewBuilder
 
 
 enum class ClaRoundStateType {
-    NORMAL, //普通状态
-    PRESSED,//按压状态
-    SELECTED,//选中状态
-    FOCUS,//获取焦点状态
-    ACTIVATED,//激活状态
-    DISABLE, //disable状态
+    /** 普通状态 */
+    NORMAL,
+
+    /** 按压状态 */
+    PRESSED,
+
+    /** 选中状态 */
+    SELECTED,
+
+    /** 获取焦点状态 */
+    FOCUS,
+
+    /** 激活状态 */
+    ACTIVATED,
+
+    /** disable状态 */
+    DISABLE,
 }
 
 interface ClaRoundViewInf {

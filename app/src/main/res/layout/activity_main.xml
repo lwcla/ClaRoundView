@@ -278,6 +278,18 @@
             app:cla_view_changeAlpha_whenPress="true"
             app:cla_view_pressAlpha="0.1" />
 
+        <cn.cla.round.view.widget.ClaRoundTextView
+            android:id="@+id/tvLineTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="line测试"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
     </LinearLayout>
 
 </ScrollView>

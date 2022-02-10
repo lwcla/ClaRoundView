@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import cn.cla.round.view.R
-import cn.cla.round.view.drawable.ClaDrawableAc
 import cn.cla.round.view.entity.ClaRoundViewBuilder
 import cn.cla.round.view.utils.INVALID_VALUE
 import cn.cla.round.view.utils.INVALID_VALUE_F
@@ -12,7 +11,7 @@ import cn.cla.round.view.utils.INVALID_VALUE_F
 internal class DisableParse(
     context: Context,
     attr: AttributeSet?
-) : ClaDrawableAc(context, attr, R.styleable.ClaRoundDisableDrawable) {
+) : ClaDrawableAbs(context, attr, R.styleable.ClaRoundDisableDrawable) {
 
     override fun TypedArray.parse(): ClaRoundViewBuilder {
         val bgColor =
