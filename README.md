@@ -122,6 +122,7 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
 
 ### xml中设置样式
 ```xml
+//设置各种状态
  <cn.cla.round.view.widget.ClaRoundTextView
       android:id="@+id/tvRound"
       android:layout_width="match_parent"
@@ -186,6 +187,35 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
       app:cla_select_textColor="@color/white"
       app:cla_select_topLeftRadius="10dp"
       app:cla_select_topRightRadius="20dp" />
+
+//设置上下的线条
+ <cn.cla.round.view.widget.ClaRoundConstraintLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="15dp"
+     android:layout_marginTop="15dp"
+     android:layout_marginEnd="15dp"
+     android:orientation="horizontal"
+     android:padding="10dp"
+     app:cla_view_lineColor="@color/black"
+     app:cla_view_lineColorAlpha="0.1"
+     app:cla_view_lineWidth="2dp"
+     app:cla_view_showBottomLine="true"
+     app:cla_view_showTopLine="true">
+  
+ </cn.cla.round.view.widget.ClaRoundConstraintLayout>
+
+//设置按压时透明效果
+<cn.cla.round.view.widget.ClaRoundImageView
+     android:id="@+id/ivTest"
+     android:layout_width="50dp"
+     android:layout_height="50dp"
+     android:layout_gravity="center_horizontal"
+     android:layout_marginTop="10dp"
+     android:padding="5dp"
+     android:src="@mipmap/ic_launcher_round"
+     app:cla_view_changeAlpha_whenPress="true"
+     app:cla_view_pressAlpha="0.1" />
 ```
 
 ### 代码中设置样式
