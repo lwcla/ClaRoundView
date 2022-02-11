@@ -27,7 +27,6 @@ local.properties
 /local.properties
 
 .idea/
-gradle/
 .gradle/
 
 
