@@ -11,7 +11,7 @@ import cn.cla.round.view.inf.ClaRoundViewInf
 import cn.cla.round.view.inf.ClaViewLineInf
 import cn.cla.round.view.utils.lazyNull
 
-class ClaRoundButton(
+open class ClaRoundButton(
     context: Context,
     attr: AttributeSet? = null
 ) : AppCompatButton(context, attr), ClaRoundViewInf, ClaAlphaViewInf, ClaViewLineInf {

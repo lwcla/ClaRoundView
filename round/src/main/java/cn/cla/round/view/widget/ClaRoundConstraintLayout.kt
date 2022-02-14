@@ -11,7 +11,7 @@ import cn.cla.round.view.inf.ClaRoundViewInf
 import cn.cla.round.view.inf.ClaViewLineInf
 import cn.cla.round.view.utils.lazyNull
 
-class ClaRoundConstraintLayout(
+open class ClaRoundConstraintLayout(
     context: Context,
     attr: AttributeSet? = null
 ) : ConstraintLayout(context, attr), ClaRoundViewInf, ClaAlphaViewInf, ClaViewLineInf {

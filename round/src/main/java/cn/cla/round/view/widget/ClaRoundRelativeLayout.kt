@@ -12,7 +12,7 @@ import cn.cla.round.view.inf.ClaRoundViewInf
 import cn.cla.round.view.inf.ClaViewLineInf
 import cn.cla.round.view.utils.lazyNull
 
-class ClaRoundRelativeLayout(
+open class ClaRoundRelativeLayout(
     context: Context,
     attr: AttributeSet? = null
 ) : RelativeLayout(context, attr), ClaRoundViewInf, ClaAlphaViewInf, ClaViewLineInf {

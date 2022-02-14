@@ -11,7 +11,7 @@ import cn.cla.round.view.inf.ClaRoundViewInf
 import cn.cla.round.view.inf.ClaViewLineInf
 import cn.cla.round.view.utils.lazyNull
 
-class ClaRoundImageView(
+open class ClaRoundImageView(
     context: Context,
     attr: AttributeSet? = null
 ) : AppCompatImageView(context, attr), ClaRoundViewInf, ClaAlphaViewInf, ClaViewLineInf {
