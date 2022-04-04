@@ -6,7 +6,7 @@ plugins {
 ext {
     PUBLISH_GROUP_ID = 'io.github.lwcla'        //项目包名
     PUBLISH_ARTIFACT_ID = 'cla_round_view'            //项目名
-    PUBLISH_VERSION = '1.0.4'                   //版本号
+    PUBLISH_VERSION = '1.0.5'                   //版本号
 }
 
 apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"
