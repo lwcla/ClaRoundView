@@ -21,10 +21,10 @@ import cn.cla.round.view.utils.changeColorAlpha
  * @property showLeft 是否显示左边
  * @property showRight 是否显示右边
  * @property showBottom 是否显示底部
- * @property lineTopSpace 线条距顶部的距离
- * @property lineBottomSpace 线条距底部的距离
- * @property lineLeftSpace 线条距左边的距离
- * @property lineRightSpace 线条距右边的距离
+ * @property lineTopSpace 线条距顶部的距离，同时设置了[lineSpace]时，top会应用[lineTopSpace]
+ * @property lineBottomSpace 线条距底部的距离，同时设置了[lineSpace]时，bottom会应用[lineBottomSpace]
+ * @property lineLeftSpace 线条距左边的距离，同时设置了[lineSpace]时，left会应用[lineLeftSpace]
+ * @property lineRightSpace 线条距右边的距离，同时设置了[lineSpace]时，right会应用[lineRightSpace]
  * @constructor
  */
 data class ClaViewLineBuilder(
@@ -96,6 +96,7 @@ data class ClaViewLineBuilder(
             return p
         }
 
+    /** 重置线条 */
     fun reset() {
         pathEffect2 = null
         paint2 = null

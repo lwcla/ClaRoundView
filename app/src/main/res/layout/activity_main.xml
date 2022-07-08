@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:paddingBottom="100dp"
         tools:context=".MainActivity">
 
@@ -164,15 +166,13 @@
                 android:text="底部线条测试"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                app:cla_view_lineBottomSpace="10dp"
                 app:cla_view_lineColor="@color/black"
                 app:cla_view_lineColorAlpha="0.5"
                 app:cla_view_lineDashGap="5dp"
                 app:cla_view_lineDashWidth="10dp"
-                app:cla_view_lineLeftSpace="30dp"
-                app:cla_view_lineRightSpace="10dp"
-                app:cla_view_lineSpace="15dp"
-                app:cla_view_lineTopSpace="5dp"
+                app:cla_view_lineLeftSpace="40dp"
+                app:cla_view_lineRightSpace="2dp"
+                app:cla_view_lineSpace="10dp"
                 app:cla_view_lineWidth="1dp"
                 app:cla_view_showBottomLine="true"
                 app:cla_view_showLeftLine="true"
@@ -289,6 +289,60 @@
             android:text="line测试"
             android:textColor="@color/black"
             android:textSize="16sp" />
+
+        <cn.cla.round.view.widget.ClaRoundEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/transparent"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="这是输入框"
+            android:textColor="@color/c1"
+            android:textSize="16sp"
+            app:cla_view_lineColor="@color/c1"
+            app:cla_view_lineWidth="2dp"
+            app:cla_view_showBottomLine="true"
+            app:cla_view_showTopLine="true" />
+
+        <cn.cla.round.view.widget.ClaRoundTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="如果设置了整体的圆角又设置了单边的圆角，那么没有设置的那一边的显示为整体的圆角大小，设置圆角的那一边按设置的大小显示"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cla_normal_backgroundColor="@color/c1"
+            app:cla_normal_radius="20dp"
+            app:cla_normal_topLeftRadius="2dp"
+            app:cla_normal_topRightRadius="8dp" />
+
+        <cn.cla.round.view.widget.ClaRoundTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="整体圆角测试"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cla_normal_backgroundColor="@color/c1"
+            app:cla_normal_radius="20dp" />
+
+        <cn.cla.round.view.widget.ClaRoundTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="单边圆角测试"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:cla_normal_backgroundColor="@color/c1"
+            app:cla_normal_bottomLeftRadius="30dp"
+            app:cla_normal_bottomRightRadius="4dp"
+            app:cla_normal_topLeftRadius="20dp"
+            app:cla_normal_topRightRadius="8dp" />
 
     </LinearLayout>
 

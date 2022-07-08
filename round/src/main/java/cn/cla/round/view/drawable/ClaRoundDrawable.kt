@@ -36,13 +36,13 @@ internal class ClaRoundDrawable(
     }
 
     override fun setCornerRadii(radii: FloatArray?) {
-        if (builder.hasAllRadius) {
-            super.setCornerRadius(builder.radius)
+        if (builder.hasSingleRadius) {
+            super.setCornerRadii(builder.radii)
             return
         }
 
-        if (builder.hasSingleRadius) {
-            super.setCornerRadii(builder.radii)
+        if (builder.hasAllRadius) {
+            super.setCornerRadius(builder.radius)
             return
         }
 
@@ -50,13 +50,13 @@ internal class ClaRoundDrawable(
     }
 
     override fun setCornerRadius(radius: Float) {
-        if (builder.hasAllRadius) {
-            super.setCornerRadius(builder.radius)
+        if (builder.hasSingleRadius) {
+            super.setCornerRadii(builder.radii)
             return
         }
 
-        if (builder.hasSingleRadius) {
-            super.setCornerRadii(builder.radii)
+        if (builder.hasAllRadius) {
+            super.setCornerRadius(builder.radius)
             return
         }
 

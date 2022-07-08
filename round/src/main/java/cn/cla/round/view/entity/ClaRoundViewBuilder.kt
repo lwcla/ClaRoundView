@@ -19,10 +19,10 @@ import cn.cla.round.view.utils.lazyNull
  * @property radiusAdjustBounds 设置圆角大小是否自动适应为 View 的高度的一半
  * @property dashWidth 边框虚线的长度
  * @property dashGap 边框虚线的间隔距离
- * @property topLeftRadius 左上的圆角
- * @property topRightRadius 右上的圆角
- * @property bottomLeftRadius 左下的圆角
- * @property bottomRightRadius 右下的圆角
+ * @property topLeftRadius 左上的圆角，同时设置了[radius]时，topLeft会应用[topLeftRadius]
+ * @property topRightRadius 右上的圆角，同时设置了[radius]时，topRight会应用[topRightRadius]
+ * @property bottomLeftRadius 左下的圆角，同时设置了[radius]时，bottomLeft会应用[bottomLeftRadius]
+ * @property bottomRightRadius 右下的圆角，同时设置了[radius]时，bottomRight会应用[bottomRightRadius]
  * @property radius 整体的圆角
  * @property drawable 设置背景图，这个优先级最高
  * @property textColor 文字的颜色
@@ -58,14 +58,14 @@ data class ClaRoundViewBuilder(
 
     internal val hasAllRadius get() = radius != INVALID_VALUE_F
 
-    internal val hasSingleRadius get() = !hasAllRadius && (topLeftRadius != INVALID_VALUE_F || topRightRadius != INVALID_VALUE_F || bottomLeftRadius != INVALID_VALUE_F || bottomRightRadius != INVALID_VALUE_F)
+    internal val hasSingleRadius get() = topLeftRadius != INVALID_VALUE_F || topRightRadius != INVALID_VALUE_F || bottomLeftRadius != INVALID_VALUE_F || bottomRightRadius != INVALID_VALUE_F
 
     internal val radii
         get() = floatArrayOf(
-            topLeftRadius, topLeftRadius,
-            topRightRadius, topRightRadius,
-            bottomRightRadius, bottomRightRadius,
-            bottomLeftRadius, bottomLeftRadius,
+            singleRadius(topLeftRadius), singleRadius(topLeftRadius),
+            singleRadius(topRightRadius), singleRadius(topRightRadius),
+            singleRadius(bottomRightRadius), singleRadius(bottomRightRadius),
+            singleRadius(bottomLeftRadius), singleRadius(bottomLeftRadius),
         )
 
     internal val radiusAdjust get() = !hasRadius && radiusAdjustBounds
@@ -81,6 +81,19 @@ data class ClaRoundViewBuilder(
     internal val aTextColor get() = textColor.changeColorAlpha(textColorAlpha)
 
     internal val hasTextColor get() = textColor != INVALID_VALUE
+
+    /**
+     * 获取单边的圆角，如果单边圆角没有设置的花，那就取整体的圆角值
+     * @param singleRadius 单边的圆角
+     * @return Float
+     */
+    private fun singleRadius(singleRadius: Float): Float {
+        if (singleRadius != INVALID_VALUE_F) {
+            return singleRadius
+        }
+
+        return radius
+    }
 }
 
 internal fun ClaRoundViewBuilder.addToStateDrawable(list: MutableList<Pair<IntArray, Drawable>>, state: Int?) {
