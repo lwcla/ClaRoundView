@@ -364,7 +364,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="如果设置了整体的圆角又设置了单边的圆角，那么没有设置的那一边的显示为整体的圆角大小，设置圆角的那一边按设置的大小显示"
+            android:text="如果设置了整体的圆角又设置了单边的圆角，那么没有设置单边的那一边的显示为整体的圆角大小，设置单边的那一边按设置的大小显示"
             android:textColor="@color/white"
             android:textSize="14sp"
             app:cla_normal_backgroundColor="@color/c1"
