@@ -12,6 +12,9 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
 ### 效果
 <img src="https://github.com/lwcla/ClaRoundView/blob/main/img/SM-G9500_20220209173148.gif" width=270 height=555>
 
+### demo
+<img src="https://github.com/lwcla/ClaRoundView/blob/main/img/QQ%E6%88%AA%E5%9B%BE20220708180245.png" width=180 height=180>
+
 ### 使用方式
 ```java
  implementation 'io.github.lwcla:cla_round_view:1.0.8'
