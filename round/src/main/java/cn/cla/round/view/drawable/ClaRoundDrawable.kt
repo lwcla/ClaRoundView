@@ -13,8 +13,18 @@ internal class ClaRoundDrawable(
     fun setRoundAndColor() {
         setColor(Color.TRANSPARENT)
         setStroke(0, Color.TRANSPARENT)
-        cornerRadii = null
-        cornerRadius = 0f
+
+        if (builder.hasSingleRadius) {
+            cornerRadii = null
+        }
+
+        if (builder.hasAllRadius) {
+            cornerRadius = 0f
+        }
+
+        if (builder.radiusAdjust) {
+            onBoundsChange(bounds)
+        }
     }
 
     override fun setColor(argb: Int) {

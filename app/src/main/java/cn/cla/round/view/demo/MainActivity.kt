@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         val btnDisable = findViewById<Button>(R.id.btnDisable)
         val ivTest = findViewById<ClaRoundImageView>(R.id.ivTest)
         val tvLineTest = findViewById<ClaRoundTextView>(R.id.tvLineTest)
+        val tvAddCustom = findViewById<ClaRoundTextView>(R.id.tvAddCustom)
+        val tvCustomStyle1 = findViewById<ClaRoundTextView>(R.id.tvCustomStyle1)
+        val tvCustomStyle2 = findViewById<ClaRoundTextView>(R.id.tvCustomStyle2)
+        val tvCustomStyle3 = findViewById<ClaRoundTextView>(R.id.tvCustomStyle3)
+        val tvCustomStyle4 = findViewById<ClaRoundTextView>(R.id.tvCustomStyle4)
 
         tvRound.setClaBackground(ClaRoundStateType.PRESSED) {
             //按压时显示为渐变色
@@ -159,6 +164,45 @@ class MainActivity : AppCompatActivity() {
             lineWidth = 2.dpf
             lineLeftSpace = 10.dpf
             showBottom = true
+        }
+
+        tvAddCustom.setOnClickListener {
+            tvRound.addClaCustomBg("这是自定义style1") {
+                bgColor = colorValue(R.color.colorPrimaryDark)
+                radiusAdjustBounds = true
+                textColor = colorValue(R.color.white)
+            }
+
+            tvRound.addClaCustomBg(0x001) {
+                bgColor = colorValue(R.color.c1)
+                radius = 10.dpf
+                textColor = colorValue(R.color.white)
+            }
+
+            tvRound.addClaCustomBg(3) {
+                bgColor = colorValue(R.color.purple_200)
+                topLeftRadius = 20.dpf
+                topRightRadius = 4.dpf
+                bottomLeftRadius = 15.dpf
+                bottomRightRadius = 0.dpf
+                textColor = colorValue(R.color.white)
+            }
+        }
+
+        tvCustomStyle1.setOnClickListener {
+            tvRound.setClaCustomBg("这是自定义style1")
+        }
+
+        tvCustomStyle2.setOnClickListener {
+            tvRound.setClaCustomBg(0x001)
+        }
+
+        tvCustomStyle3.setOnClickListener {
+            tvRound.setClaCustomBg(3)
+        }
+
+        tvCustomStyle4.setOnClickListener {
+            tvRound.setClaCustomBg(null)
         }
     }
 }

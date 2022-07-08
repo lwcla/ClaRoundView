@@ -7,6 +7,7 @@ import android.graphics.drawable.StateListDrawable
 import android.util.AttributeSet
 import android.view.View
 import android.widget.TextView
+import cn.cla.round.view.entity.ClaRoundViewBuilder
 import cn.cla.round.view.entity.addToColorState
 import cn.cla.round.view.entity.addToStateDrawable
 import cn.cla.round.view.inf.ClaRoundStateType
@@ -48,9 +49,30 @@ class ClaRoundViewHelper(
         )
     }
 
+    private val customMap by lazyNull { mutableMapOf<Any?, ClaRoundViewBuilder>() }
+    private var curCustomBuilder: ClaRoundViewBuilder? = null
+
     fun setRoundAndColor(view: View) {
         setBackground(view)
         setTextColor(view)
+    }
+
+    fun addCustom(key: Any, builder: ClaRoundViewBuilder.() -> Unit) {
+        val value = customMap[key] ?: ClaRoundViewBuilder()
+        builder(value)
+        customMap[key] = value
+    }
+
+    fun setCustom(key: Any?, view: View) {
+        val builder = customMap[key]
+        if (System.identityHashCode(builder) == System.identityHashCode(curCustomBuilder)) {
+            //不需要去刷新view
+            return
+        }
+
+        curCustomBuilder = builder
+        setRoundAndColor(view)
+        view.postInvalidate()
     }
 
     private fun setBackground(v: View) {
@@ -61,7 +83,8 @@ class ClaRoundViewHelper(
         focusBuilder.addToStateDrawable(list, focused)
         activatedBuilder.addToStateDrawable(list, activated)
         selectBuilder.addToStateDrawable(list, select)
-        normalBuilder.addToStateDrawable(list, null)
+        val realNormalBuilder = curCustomBuilder ?: normalBuilder
+        realNormalBuilder.addToStateDrawable(list, null)
 
         //避免没有设置这些属性的时候覆盖了background
         if (list.isEmpty()) {
@@ -86,10 +109,11 @@ class ClaRoundViewHelper(
         focusBuilder.addToColorState(stateList, colorList, focused)
         activatedBuilder.addToColorState(stateList, colorList, activated)
         selectBuilder.addToColorState(stateList, colorList, select)
-        normalBuilder.addToColorState(stateList, colorList, null)
+        val realNormalBuilder = curCustomBuilder ?: normalBuilder
+        realNormalBuilder.addToColorState(stateList, colorList, null)
 
         //避免没有设置这些属性的时候覆盖了textColor
-        if (stateList.isNullOrEmpty() || colorList.isNullOrEmpty()) {
+        if (stateList.isEmpty() || colorList.isEmpty()) {
             return
         }
 

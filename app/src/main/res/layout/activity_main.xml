@@ -83,11 +83,8 @@
         <cn.cla.round.view.widget.ClaRoundConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
             android:orientation="horizontal"
-            android:padding="10dp"
             app:cla_view_lineColor="@color/black"
             app:cla_view_lineColorAlpha="0.1"
             app:cla_view_lineWidth="2dp"
@@ -189,10 +186,66 @@
                 android:textColor="@color/black"
                 app:cla_view_changeAlpha_whenPress="true" />
 
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvAddCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="添加自定义"
+                android:textColor="@color/white"
+                app:cla_normal_backgroundColor="@color/c1"
+                app:cla_normal_radius="8dp"
+                app:cla_view_changeAlpha_whenPress="true" />
+
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvCustomStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="设置自定义样式1"
+                android:textColor="@color/white"
+                app:cla_normal_backgroundColor="@color/c1"
+                app:cla_normal_radius="8dp"
+                app:cla_view_changeAlpha_whenPress="true" />
+
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvCustomStyle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="设置自定义样式2"
+                android:textColor="@color/white"
+                app:cla_normal_backgroundColor="@color/c1"
+                app:cla_normal_radius="8dp"
+                app:cla_view_changeAlpha_whenPress="true" />
+
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvCustomStyle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="设置自定义样式3"
+                android:textColor="@color/white"
+                app:cla_normal_backgroundColor="@color/c1"
+                app:cla_normal_radius="8dp"
+                app:cla_view_changeAlpha_whenPress="true" />
+
+            <cn.cla.round.view.widget.ClaRoundTextView
+                android:id="@+id/tvCustomStyle4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:text="恢复normalStyle"
+                android:textColor="@color/white"
+                app:cla_normal_backgroundColor="@color/c1"
+                app:cla_normal_radius="8dp"
+                app:cla_view_changeAlpha_whenPress="true" />
+
             <androidx.constraintlayout.helper.widget.Flow
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:constraint_referenced_ids="btnSelect,btnFocus,btnActivated,btnChangeActivated,btnDisable,tvPress,tvDisable,tvBottomLine,tvChangeLine"
+                android:layout_marginTop="10dp"
+                app:constraint_referenced_ids="btnSelect,btnFocus,btnActivated,btnChangeActivated,btnDisable,tvPress,tvDisable,tvBottomLine,tvChangeLine,tvAddCustom,tvCustomStyle1,tvCustomStyle2,tvCustomStyle3,tvCustomStyle4"
                 app:flow_horizontalAlign="end"
                 app:flow_horizontalGap="10dp"
                 app:flow_horizontalStyle="packed"
