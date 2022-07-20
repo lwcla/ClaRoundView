@@ -16,6 +16,7 @@ import androidx.core.graphics.drawable.DrawableCompat
 import cn.cla.round.view.inf.ClaRoundStateType
 import cn.cla.round.view.widget.ClaRoundImageView
 import cn.cla.round.view.widget.ClaRoundTextView
+import cn.cla.round.view.widget.ClaShadowConstraintLayout
 import kotlin.concurrent.thread
 import kotlin.math.abs
 import kotlin.math.min
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         val tvCustomStyle2 = findViewById<ClaRoundTextView>(R.id.tvCustomStyle2)
         val tvCustomStyle3 = findViewById<ClaRoundTextView>(R.id.tvCustomStyle3)
         val tvCustomStyle4 = findViewById<ClaRoundTextView>(R.id.tvCustomStyle4)
+        val layoutShadow = findViewById<ClaShadowConstraintLayout>(R.id.layoutShadow)
 
         tvRound.setClaBackground(ClaRoundStateType.PRESSED) {
             //按压时显示为渐变色
@@ -204,6 +206,12 @@ class MainActivity : AppCompatActivity() {
         tvCustomStyle4.setOnClickListener {
             tvRound.setClaCustomBg(null)
         }
+
+        layoutShadow.changeAlphaWhenPress = true
+        layoutShadow.setOnClickListener {
+            layoutShadow.shadowColor = colorValue(R.color.c1)
+        }
+//        layoutShadow.radius = ClaShadowLayoutHelper.RADIUS_OF_HALF_VIEW_WIDTH
     }
 }
 

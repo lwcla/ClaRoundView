@@ -9,6 +9,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         android:orientation="vertical"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -396,6 +398,32 @@
             app:cla_normal_bottomRightRadius="4dp"
             app:cla_normal_topLeftRadius="20dp"
             app:cla_normal_topRightRadius="8dp" />
+
+        <cn.cla.round.view.widget.ClaShadowConstraintLayout
+            android:id="@+id/layoutShadow"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:background="@color/white"
+            app:cla_borderColor="@color/c3"
+            app:cla_radius="8dp"
+            app:cla_shadowAlpha="0.5"
+            app:cla_shadowElevation="20dp"
+            app:cla_showBorderOnlyBeforeL="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="这是阴影设置"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </cn.cla.round.view.widget.ClaShadowConstraintLayout>
 
     </LinearLayout>
 

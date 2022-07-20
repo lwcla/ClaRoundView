@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!--是否在按压状态改变按钮的透明度-->
     <attr name="cla_view_changeAlpha_whenPress" format="boolean" />
@@ -1255,6 +1255,52 @@
         <attr name="cla_view_lineLeftSpace" />
         <attr name="cla_view_lineRightSpace" />
 
+    </declare-styleable>
+
+    <!--阴影-->
+    <attr name="cla_general_shadow_alpha" format="float" tools:ignore="ResourceName" />
+    <attr name="cla_general_shadow_elevation" format="dimension" tools:ignore="ResourceName" />
+    <declare-styleable name="ClaShadowConstraintLayout" tools:ignore="ResourceName">
+        <attr name="android:maxWidth" />
+        <attr name="android:maxHeight" />
+        <attr name="android:minWidth" />
+        <attr name="android:minHeight" />
+        <attr name="cla_bottomDividerHeight" format="dimension" />
+        <attr name="cla_bottomDividerColor" format="color|reference" />
+        <attr name="cla_bottomDividerInsetLeft" format="dimension" />
+        <attr name="cla_bottomDividerInsetRight" format="dimension" />
+        <attr name="cla_topDividerHeight" format="dimension" />
+        <attr name="cla_topDividerColor" format="color|reference" />
+        <attr name="cla_topDividerInsetLeft" format="dimension" />
+        <attr name="cla_topDividerInsetRight" format="dimension" />
+        <attr name="cla_leftDividerWidth" format="dimension" />
+        <attr name="cla_leftDividerColor" format="color|reference" />
+        <attr name="cla_leftDividerInsetTop" format="dimension" />
+        <attr name="cla_leftDividerInsetBottom" format="dimension" />
+        <attr name="cla_rightDividerWidth" format="dimension" />
+        <attr name="cla_rightDividerColor" format="color|reference" />
+        <attr name="cla_rightDividerInsetTop" format="dimension" />
+        <attr name="cla_rightDividerInsetBottom" format="dimension" />
+        <attr name="cla_radius" format="dimension" />
+        <attr name="cla_borderColor" format="color" />
+        <attr name="cla_borderWidth" format="dimension" />
+        <attr name="cla_outerNormalColor" format="color|reference" />
+        <attr name="cla_hideRadiusSide" format="enum">
+            <enum name="none" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
+            <enum name="left" value="4" />
+        </attr>
+        <attr name="cla_showBorderOnlyBeforeL" format="boolean" />
+        <attr name="cla_shadowElevation" format="dimension" />
+        <attr name="cla_useThemeGeneralShadowElevation" format="boolean" />
+        <attr name="cla_shadowAlpha" format="float" />
+        <attr name="cla_outlineInsetTop" format="dimension" />
+        <attr name="cla_outlineInsetLeft" format="dimension" />
+        <attr name="cla_outlineInsetRight" format="dimension" />
+        <attr name="cla_outlineInsetBottom" format="dimension" />
+        <attr name="cla_outlineExcludePadding" format="boolean" />
     </declare-styleable>
 
 </resources>
