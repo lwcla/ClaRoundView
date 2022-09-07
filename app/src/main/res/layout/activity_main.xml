@@ -425,6 +425,12 @@
 
         </cn.cla.round.view.widget.ClaShadowConstraintLayout>
 
+        <cn.cla.round.view.widget.ClaRoundFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:cla_normal_backgroundColor="@color/black"
+            app:cla_normal_radius="8dp" />
+
     </LinearLayout>
 
 </ScrollView>
