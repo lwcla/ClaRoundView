@@ -17,7 +17,7 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
 
 ### 使用方式
 ```java
- implementation 'io.github.lwcla:cla_round_view:1.0.11'
+ implementation 'io.github.lwcla:cla_round_view:1.0.12'
 ```
 
 ### 属性说明
