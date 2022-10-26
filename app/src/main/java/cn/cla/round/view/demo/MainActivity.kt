@@ -3,6 +3,7 @@ package cn.cla.round.view.demo
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
@@ -173,12 +174,14 @@ class MainActivity : AppCompatActivity() {
                 bgColor = colorValue(R.color.colorPrimaryDark)
                 radiusAdjustBounds = true
                 textColor = colorValue(R.color.white)
+                textTypeface = Typeface.defaultFromStyle(Typeface.ITALIC)
             }
 
             tvRound.addClaCustomBg(0x001) {
                 bgColor = colorValue(R.color.c1)
                 radius = 10.dpf
                 textColor = colorValue(R.color.white)
+                textTypeface = Typeface.defaultFromStyle(Typeface.BOLD)
             }
 
             tvRound.addClaCustomBg(3) {
@@ -188,6 +191,7 @@ class MainActivity : AppCompatActivity() {
                 bottomLeftRadius = 15.dpf
                 bottomRightRadius = 0.dpf
                 textColor = colorValue(R.color.white)
+                textTypeface = Typeface.defaultFromStyle(Typeface.ITALIC)
             }
         }
 

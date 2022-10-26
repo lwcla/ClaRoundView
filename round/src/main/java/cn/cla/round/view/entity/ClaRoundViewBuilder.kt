@@ -1,8 +1,10 @@
 package cn.cla.round.view.entity
 
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
 import cn.cla.round.view.drawable.ClaRoundDrawable
+import cn.cla.round.view.textNormal
 import cn.cla.round.view.utils.INVALID_VALUE
 import cn.cla.round.view.utils.INVALID_VALUE_F
 import cn.cla.round.view.utils.changeColorAlpha
@@ -27,6 +29,7 @@ import cn.cla.round.view.utils.lazyNull
  * @property drawable 设置背景图，这个优先级最高
  * @property textColor 文字的颜色
  * @property textColorAlpha 文字颜色戴尔透明度 0-1
+ * @property textIsBold 文字是否大写
  * @constructor
  */
 data class ClaRoundViewBuilder(
@@ -46,6 +49,7 @@ data class ClaRoundViewBuilder(
     var radius: Float = INVALID_VALUE_F,
     @ColorInt var textColor: Int = INVALID_VALUE,
     var textColorAlpha: Float = INVALID_VALUE_F,
+    var textTypeface: Typeface = textNormal
 ) {
 
     private val roundDrawable by lazyNull { ClaRoundDrawable(this) }

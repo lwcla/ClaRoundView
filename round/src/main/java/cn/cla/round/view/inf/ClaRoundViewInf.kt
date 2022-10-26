@@ -35,7 +35,10 @@ interface ClaRoundViewInf {
     }
 
     /** 设置按钮的背景色 */
-    fun setClaBackground(type: ClaRoundStateType = ClaRoundStateType.NORMAL, builder: ClaRoundViewBuilder.() -> Unit) {
+    fun setClaBackground(
+        type: ClaRoundStateType = ClaRoundStateType.NORMAL,
+        builder: ClaRoundViewBuilder.() -> Unit
+    ) {
         helper.builderMap[type]?.let { b ->
             builder(b)
             helper.setRoundAndColor(claView)

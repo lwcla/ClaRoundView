@@ -5,6 +5,9 @@ import android.content.res.TypedArray
 import android.util.AttributeSet
 import cn.cla.round.view.R
 import cn.cla.round.view.entity.ClaRoundViewBuilder
+import cn.cla.round.view.textBold
+import cn.cla.round.view.textItalic
+import cn.cla.round.view.textNormal
 import cn.cla.round.view.utils.INVALID_VALUE
 import cn.cla.round.view.utils.INVALID_VALUE_F
 
@@ -49,8 +52,9 @@ internal class NormalParse(
         val textColorAlpha =
             getFloat(R.styleable.ClaRoundNormalDrawable_cla_normal_textColorAlpha, INVALID_VALUE_F)
 
-        val drawable =
-            getDrawable(R.styleable.ClaRoundNormalDrawable_cla_normal_drawable)
+        val drawable = getDrawable(R.styleable.ClaRoundNormalDrawable_cla_normal_drawable)
+
+        val textTypeface = getInt(R.styleable.ClaRoundNormalDrawable_cla_normal_textStyle, 0)
 
         return ClaRoundViewBuilder(
             drawable = drawable,
@@ -69,6 +73,11 @@ internal class NormalParse(
             textColorAlpha = textColorAlpha,
             dashWidth = borderDashWidth,
             dashGap = borderDashGap,
+            textTypeface = when (textTypeface) {
+                0 -> textNormal
+                1 -> textBold
+                else -> textItalic
+            },
         )
     }
 }

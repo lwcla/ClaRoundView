@@ -35,6 +35,7 @@
             app:cla_activated_backgroundColor="@color/transparent"
             app:cla_activated_textColor="@color/black"
             app:cla_activated_textColorAlpha="0.5"
+            app:cla_activated_textStyle="italic"
             app:cla_disable_backgroundColor="@color/c5"
             app:cla_disable_backgroundColorAlpha="0.5"
             app:cla_disable_borderColor="@color/black"
@@ -42,6 +43,7 @@
             app:cla_disable_borderWidth="2dp"
             app:cla_disable_radius="15dp"
             app:cla_disable_textColor="@color/white"
+            app:cla_disable_textStyle="italic"
             app:cla_focus_backgroundColor="@color/black"
             app:cla_focus_borderColor="@color/c1"
             app:cla_focus_borderColorAlpha="0.7"
@@ -49,6 +51,7 @@
             app:cla_focus_radiusAdjustBounds="true"
             app:cla_focus_textColor="@color/white"
             app:cla_focus_textColorAlpha="0.7"
+            app:cla_focus_textStyle="bold"
             app:cla_normal_backgroundColor="@color/c1"
             app:cla_normal_backgroundColorAlpha="0.1"
             app:cla_normal_borderColor="@color/c3"
@@ -71,6 +74,7 @@
             app:cla_press_radiusAdjustBounds="true"
             app:cla_press_textColor="@color/black"
             app:cla_press_textColorAlpha="0.3"
+            app:cla_press_textStyle="italic"
             app:cla_select_backgroundColor="@color/colorPrimaryDark"
             app:cla_select_backgroundColorAlpha="0.1"
             app:cla_select_borderColor="@color/colorPrimaryDark"
@@ -79,6 +83,7 @@
             app:cla_select_bottomLeftRadius="20dp"
             app:cla_select_bottomRightRadius="10dp"
             app:cla_select_textColor="@color/white"
+            app:cla_select_textStyle="italic"
             app:cla_select_topLeftRadius="10dp"
             app:cla_select_topRightRadius="20dp" />
 
@@ -246,7 +251,7 @@
             <androidx.constraintlayout.helper.widget.Flow
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="4dp"
                 app:constraint_referenced_ids="btnSelect,btnFocus,btnActivated,btnChangeActivated,btnDisable,tvPress,tvDisable,tvBottomLine,tvChangeLine,tvAddCustom,tvCustomStyle1,tvCustomStyle2,tvCustomStyle3,tvCustomStyle4"
                 app:flow_horizontalAlign="end"
                 app:flow_horizontalGap="10dp"
@@ -255,6 +260,7 @@
                 app:flow_verticalGap="10dp"
                 app:flow_wrapMode="chain"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

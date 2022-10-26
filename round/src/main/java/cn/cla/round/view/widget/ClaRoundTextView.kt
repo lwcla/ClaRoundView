@@ -39,6 +39,12 @@ open class ClaRoundTextView(
         onEnabledChanged(this, enabled)
     }
 
+
+    override fun drawableStateChanged() {
+        super.drawableStateChanged()
+        roundHelper.drawableStateChanged(this)
+    }
+
     override fun getView(): View = this
 
     override fun getClaRoundViewHelper(): ClaRoundViewHelper = roundHelper

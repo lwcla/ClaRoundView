@@ -2,6 +2,7 @@ package cn.cla.round.view
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.StateListDrawable
 import android.util.AttributeSet
@@ -13,6 +14,15 @@ import cn.cla.round.view.entity.addToStateDrawable
 import cn.cla.round.view.inf.ClaRoundStateType
 import cn.cla.round.view.parse.*
 import cn.cla.round.view.utils.lazyNull
+
+/** 字体加粗 */
+internal val textBold: Typeface = Typeface.defaultFromStyle(Typeface.BOLD)
+
+/** 文字倾斜 */
+internal val textItalic: Typeface = Typeface.defaultFromStyle(Typeface.ITALIC)
+
+/** 普通字体 */
+internal val textNormal: Typeface = Typeface.defaultFromStyle(Typeface.NORMAL)
 
 class ClaRoundViewHelper(
     context: Context,
@@ -72,7 +82,12 @@ class ClaRoundViewHelper(
 
         curCustomBuilder = builder
         setRoundAndColor(view)
+        setTextTypeface(view)
         view.postInvalidate()
+    }
+
+    fun drawableStateChanged(view: View) {
+        setTextTypeface(view)
     }
 
     private fun setBackground(v: View) {
@@ -119,5 +134,39 @@ class ClaRoundViewHelper(
 
         val color = ColorStateList(stateList.toTypedArray(), colorList.toIntArray())
         v.setTextColor(color)
+    }
+
+    private fun setTextTypeface(v: View) {
+        if (v !is TextView) {
+            return
+        }
+
+        if (!v.isEnabled) {
+            v.typeface = disableBuilder.textTypeface
+            return
+        }
+
+        if (v.isPressed) {
+            v.typeface = pressBuilder.textTypeface
+            return
+        }
+
+        if (v.isFocused) {
+            v.typeface = focusBuilder.textTypeface
+            return
+        }
+
+        if (v.isActivated) {
+            v.typeface = activatedBuilder.textTypeface
+            return
+        }
+
+        if (v.isSelected) {
+            v.typeface = selectBuilder.textTypeface
+            return
+        }
+
+        val realNormalBuilder = curCustomBuilder ?: normalBuilder
+        v.typeface = realNormalBuilder.textTypeface
     }
 }
