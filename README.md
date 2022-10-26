@@ -94,6 +94,12 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
  <attr name="cla_normal_textColor" format="color" />
  <!--文字颜色的透明度 0f-1f-->
  <attr name="cla_normal_textColorAlpha" format="float" />
+ <!--文字style-->
+ <attr name="cla_normal_textStyle" format="flags">
+     <flag name="normal" value="0" />
+     <flag name="bold" value="1" />
+     <flag name="italic" value="2" />
+ </attr>
  <!--普通状态-->
  
  <!--按压状态-->
