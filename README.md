@@ -6,7 +6,7 @@
 方案定下之后就是一个体力劳动 0.0</br>
 </br>
 qmui我是觉得太重了，为了这么个功能引入整个库，划不来。而且之前用qmui的TitleBar,坑好多，还是自己写的能控制得住</br>
-BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能简单一点
+BackgroundLibrar 看了他的代码之后，感觉还是有些复杂，我希望能简单一点
 </br>
 
 ### 效果
@@ -17,7 +17,7 @@ BackgroundLibrary我看了他的代码，感觉还是有些复杂，我希望能
 
 ### 使用方式
 ```java
- implementation 'io.github.lwcla:cla_round_view:1.0.12'
+ implementation 'io.github.lwcla:cla_round_view:1.0.13'
 ```
 
 ### 属性说明
