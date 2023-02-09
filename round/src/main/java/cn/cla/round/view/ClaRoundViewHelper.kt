@@ -5,6 +5,7 @@ import android.content.res.ColorStateList
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.StateListDrawable
+import android.util.ArrayMap
 import android.util.AttributeSet
 import android.view.View
 import android.widget.TextView
@@ -49,17 +50,17 @@ class ClaRoundViewHelper(
     private val disableBuilder by lazyNull { DisableParse(context, attr).builder }
 
     val builderMap by lazyNull {
-        mutableMapOf(
-            ClaRoundStateType.NORMAL to normalBuilder,
-            ClaRoundStateType.PRESSED to pressBuilder,
-            ClaRoundStateType.SELECTED to selectBuilder,
-            ClaRoundStateType.FOCUS to focusBuilder,
-            ClaRoundStateType.ACTIVATED to activatedBuilder,
-            ClaRoundStateType.DISABLE to disableBuilder,
-        )
+        ArrayMap<ClaRoundStateType, ClaRoundViewBuilder>().also {
+            it[ClaRoundStateType.NORMAL] = normalBuilder
+            it[ClaRoundStateType.PRESSED] = pressBuilder
+            it[ClaRoundStateType.SELECTED] = selectBuilder
+            it[ClaRoundStateType.FOCUS] = focusBuilder
+            it[ClaRoundStateType.ACTIVATED] = activatedBuilder
+            it[ClaRoundStateType.DISABLE] = disableBuilder
+        }
     }
 
-    private val customMap by lazyNull { mutableMapOf<Any?, ClaRoundViewBuilder>() }
+    private val customMap by lazyNull { ArrayMap<Any?, ClaRoundViewBuilder>() }
     private var curCustomBuilder: ClaRoundViewBuilder? = null
 
     fun setRoundAndColor(view: View) {
