@@ -24,7 +24,7 @@ open class ClaRoundImageView(
         initLine(context, attr)
     }
 
-    override fun dispatchDraw(canvas: Canvas?) {
+    override fun dispatchDraw(canvas: Canvas) {
         super.dispatchDraw(canvas)
         drawLine(canvas)
     }
